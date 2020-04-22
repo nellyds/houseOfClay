@@ -1,17 +1,18 @@
 <template>
   <div class="intro">
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="flip-up" data-aos-duration="800" data-aos-delay="400" src="@/assets/background.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="fade-left" data-aos-duration="1800" data-aos-delay="2800" src="@/assets/middleShadow.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="700" src="@/assets/backMountain.png"></v-img>
-    <v-img class="img" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="900" src="@/assets/middleMountain.png"> </v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1200" src="@/assets/foreMountain.png"> </v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1500" src="@/assets/trees.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1700" src="@/assets/figure.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="slide-right" data-aos-duration="1000" data-aos-delay="2000" src="@/assets/cloud1.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="slide-left" data-aos-duration="1000" data-aos-delay="2200" src="@/assets/cloud2.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="slide-left" data-aos-duration="1000" data-aos-delay="2400" src="@/assets/cloud3.png"></v-img>
-    <v-img class="img" data-aos-easing="ease-out-cubic" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2600" src="@/assets/sun.png"></v-img>
-     <v-img class="img" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="3000" src="@/assets/lighting.png"></v-img>
+
+        <div  class="sunTarget" > 
+            <p  class="text" @click="$vuetify.goTo('#about')">Click Here</p> 
+        </div>
+        <div class="personTarget" >
+            <p @click="$vuetify.goTo('#treatment')">Click Here </p>
+        </div>
+        <div class="cloudTarget" >
+            <p @click="$vuetify.goTo('#services')">Click Here </p>
+        </div>
+             <img class="intro"
+          :src="require('@/assets/hoc.svg')"
+        />
   </div>
 </template>
 
@@ -20,33 +21,95 @@
 export default {
   name: "Intro",
   components: {
+  },
+  methods:{
+      about: function(){
+          window.alert('reached')
+      }
   }
 };
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap');
+@media screen and (min-width: 416px){
+.sunTarget{
+    height: 15%;
+    width: 15%;
+    margin-left: 50px;
+    margin-top: 200px;
+    position: absolute;  
+}
+.sunTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-weight:300;
+    font-size: 3em;
+}
 
-
-body{
-font-family: 'Kirang Haerang', cursive;
-color:white;
+.personTarget{
+    height: 15%;
+    width: 15%;
+    margin-left: 660px;
+    margin-top: 350px;
+    position: absolute;
+    background-image: url('~@/assets/text.png')  
+}
+.personTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-weight:300;
+    font-size: 3em;
 }
 .img{
   position:absolute;
 }
-.text{
-  font-family: 'Kirang Haerang', cursive;
-  color: white;
-  margin-top: 20%;
-  margin-left: 50%;
-font-size: 2em;
-position: absolute;
+.cloudTarget{
+    height: 15%;
+    width: 15%;
+    margin-left: 55%;
+    margin-top: 20%;
+    position: absolute;  
 }
-.highlight{
-  border: solid 3px white;
+.cloudTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 3em;
 }
-.header{
+}
+@media screen and (max-width: 415px){
+.sunTarget{
+
+    margin-left: 20px;
+    margin-top: 50px;
+    position: absolute;  
+}
+.sunTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 1.2em;
+    font-weight:300;
 }
 
-
+.img{
+  position:absolute;
+}
+.personTarget{
+    height: 15%;
+    width: 15%;
+    margin-left: 55%;
+    margin-top: 25%;
+    position: absolute;  
+}
+.personTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-weight:300;
+}
+.cloudTarget{
+    height: 15%;
+    width: 15%;
+    margin-left: 75%;
+    margin-top: 20%;
+    position: absolute;  
+}
+.cloudTarget p{
+    font-family: 'Kirang Haerang', cursive;
+    font-weight:300;
+}
+}
 </style>
