@@ -2,13 +2,13 @@
   <div class="intro">
 
         <div  class="sunTarget" > 
-            <p  class="text" @click="$vuetify.goTo('#about')">Click Here</p> 
+            <p  class="text" @click="$vuetify.goTo('#about')">About</p> 
         </div>
         <div class="personTarget" >
-            <p @click="$vuetify.goTo('#treatment')">Click Here </p>
+            <p @click="$vuetify.goTo('#treatment')">Say Hi </p>
         </div>
         <div class="cloudTarget" >
-            <p @click="$vuetify.goTo('#services')">Click Here </p>
+            <p @click="$vuetify.goTo('#services')">What We DO </p>
         </div>
              <img class="intro"
           :src="require('@/assets/hoc.svg')"
@@ -51,7 +51,6 @@ export default {
     margin-left: 660px;
     margin-top: 350px;
     position: absolute;
-    background-image: url('~@/assets/text.png')  
 }
 .personTarget p{
     font-family: 'Kirang Haerang', cursive;
