@@ -1,34 +1,25 @@
 
 <template>
-<div v-ripple class="service" >
-        <img class="serviceIcon selected" @click="overlay = !overlay" :src="require('@/assets/'+iconUrl)" >
-         <v-overlay
-            opacity=.8
-            color="black"
-            :value="overlay"
-            :z-index="zIndex"
-          >
-            <div class="serviceDetail">
-                <p class="article">{{name}}</p>
-                <p>{{description}}</p>
-                <v-btn
-                    color="primary"
-                    @click="overlay = false"
-                >
-                    Close
-                </v-btn>
-            </div>
-          </v-overlay>
+<div class="service" >
+   
+    <div class="card animation">
+        <img  @click="showDescription = !showDescription" class="serviceIcon" :src="require('@/assets/'+iconUrl)" >
+        <transition name="fade">
+        <p class="serviceName" v-if="!showDescription">{{name}}</p>
+        </transition>
+        <transition name="fade">
+        <p class="serviceDescription" v-if="showDescription">{{description}}</p>
+        </transition>
+
+    </div>
+  
 </div>
 </template><script>
 export default {
     name: "Service",
     data() {
         return{
-        absolute: false,
-        opacity: 1,
-        overlay: false,
-        zIndex: 5,
+            showDescription: false,
         }
     },
     props: {
@@ -37,71 +28,163 @@ export default {
         description: String
     },
     methods:{
+
     },
-    mounted(){      
-    }
 }
 </script>
 <style scoped>
 @media screen and (min-width: 416px){
-}.serviceDetail{
-    width: 500px;
-    padding: 10px;
-    background-color: white;
-    color: black;
+.serviceName{
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Sunflower';
 }
-.serviceDetail img{
-    width: 450px;
-    height: auto;
-}
-@media screen and (max-width: 415px){
-    .textCard{
-    color: white;  
-}
-.serviceDetail{
-    width: 350px;
-    padding: 10px;
-    background-color: white;
-    color: black;
-}
-.serviceDetail img{
-    width: 250px;
-    height: auto;
-}
-.serviceIcon{
-    width: 95x;
-    height: 95px;
-    padding: 10px;
-}
-.selected{
-
-    border-top-left-radius: 10px;
-}
-.service{
-    width: 110px;
-    height: 110px;
-    animation: enter .2; 
-}
-}
-.textCard{
-    color: white;
-    
+.serviceDescription{
+       text-align: center;
+    font-size: 1em;
+    font-family: 'Sunflower'; 
 }
 .serviceIcon{
     min-width: 100px;
     max-width: 100px;
     padding: 10px;
+    border-radius: 50px;
+    border: solid 2px white;
+    background-color: rgba(43, 128, 177, 0.7);
 }
-.selected{
-    border-top-left-radius: 10px;
+.card{
+
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    border: solid 2px white;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 15px;
+
 }
+
 .service{
-    width: 110px;
-    height: 110px;
+    width: 330px;
+    height: 330px;
+    
+}
+.fade-enter{
+    opacity: 0;
+    transform: scaleX(0);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.fade-enter-active {
+  transition: opacity, transform 400ms ease-out;
+}
+.fade-leave{
+    opacity:1;
+    transform:scaleX(1)
+}
+.fade-leave-to{
+    opacity: 0;
+    transform: scaleX(0)
+}
+.fade-leave-active{
+    transition: opacity, transform 400ms ease-out;
+}
+}
+
+@media screen and (max-width: 415px){
+    .serviceName{
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Sunflower';
+}
+.serviceDescription{
+       text-align: center;
+    font-size: 1em;
+    font-family: 'Sunflower'; 
+}
+.blank{
+    display: none;
+}
+    .textCard{
+    color: white;  
+}
+.card{
+    width: 100%;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+.serviceIcon{
+    width: 95x;
+    height: 95px;
+    padding: 10px;
+    border-radius: 25%;
+}
+
+.service{
+    width: 330px;
+    height: 330px;
     animation: enter .2; 
 }
-@keyframe enter{
-    from {opacity: 0%}
-    to {opacity: 100%}
 }
+.fade-enter{
+    opacity: 0;
+    transform: scaleX(0);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.fade-enter-active {
+  transition: opacity, transform 400ms ease-out;
+}
+.fade-leave{
+    opacity:1;
+    transform:scaleX(1)
+}
+.fade-leave-to{
+    opacity: 0;
+    transform: scaleX(0)
+}
+.fade-leave-active{
+    transition: opacity, transform 400ms ease-out;
+}
+.serviceIcon{
+    min-width: 100px;
+    max-width: 100px;
+    padding: 10px;
+    border-radius: 50px;
+    border: solid 2px white;
+    background-color: rgba(43, 128, 177, 0.7);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 225, 255, 1);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(255,255,255, .3);
+      box-shadow: 0 0 0 10px rgba(255,255,255, 1);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 1);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 1);
+  }
+}
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    border: solid 2px white;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 15px;
+
+}
+.service{
+    width: 330px;
+    height: 330px;
+    animation: enter .2; 
+}
+
 </style>

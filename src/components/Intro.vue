@@ -11,7 +11,7 @@
             <p @click="$vuetify.goTo('#services')">What We DO </p>
         </div>
              <img class="intro"
-          :src="require('@/assets/hoc.svg')"
+          :src="require('@/assets/s.svg')"
         />
   </div>
 </template>

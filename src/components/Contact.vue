@@ -1,17 +1,12 @@
 <template>
 <div v-ripple class="contact" >
-    <h1>Get in Contact:</h1>
-        <v-card class="mx-auto"
-        max-width="400px" 
-        style="padding:15px">
-            <p> Phone: <span style="font-weight: bolder" >111-111-1111</span></p>
-        <v-btn  color="rgba(65,189,255)" @click="overlay = !overlay"> Send us a message</v-btn>
-        </v-card>
+
+    <p @click="overlay =!overlay" text > Send us a message </p>
          <v-overlay
             opacity=.8
             color="black"
             :value="overlay"
-            :z-index="zIndex"
+            :z-index="5"
           >
             <div class="contactOverlay">
                 <v-form 
