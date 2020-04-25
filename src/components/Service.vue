@@ -156,7 +156,7 @@ export default {
     border-radius: 50px;
     border: solid 2px white;
     background-color: rgba(43, 128, 177, 0.7);
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite 2s;
 }
 @keyframes pulse {
   0% {
@@ -164,12 +164,12 @@ export default {
     box-shadow: 0 0 0 0 rgba(255, 225, 255, 1);
   }
   70% {
-      -moz-box-shadow: 0 0 0 10px rgba(255,255,255, .3);
-      box-shadow: 0 0 0 10px rgba(255,255,255, 1);
+      -moz-box-shadow: 0 0 0 10px rgba(255, 28, 28, 0.3);
+      box-shadow: 0 0 0 10px rgba(255, 91, 15, 0.3);
   }
   100% {
-      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 1);
-      box-shadow: 0 0 0 0 rgba(255,255,255, 1);
+      -moz-box-shadow: 0 0 0 0 rgb(255, 238, 0);
+      box-shadow: 0 0 0 0 rgb(255, 238, 0);;
   }
 }
 .card{

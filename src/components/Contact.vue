@@ -32,10 +32,12 @@
                         label="Phone"
                     ></v-text-field>
                     <v-text-field
-                        v-model="message"
+                        v-model="formMessage"
                         label="Message"
                     ></v-text-field>
-
+                    <p> Let us know a good time to contact you</p>
+                    <v-date-picker v-model="datePicked"></v-date-picker>
+                    <v-time-picker v-model="timePicked"></v-time-picker>
                 <v-btn
                     color="primary"
                     @click="submit"
@@ -43,6 +45,7 @@
                     Submit
                 </v-btn>
                 </v-form>
+                {{message}}
             </div>
           </v-overlay>
 </div>
@@ -53,19 +56,28 @@ export default {
         return{
             overlay: false,
             valid: true,
+            datePicked: null,
+            timePicked: null,
             name:'',
             email:'',
             phone:'',
-            message:'',
+            formMessage:'',
             emailRules: [
                 v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
             ],
+            message:{}
         }
     },
     methods:{
         submit: function(){
             this.$refs.form.validate();
-            window.alert(this.name+ this.email+ this.phone+ this.message)
+            this.message['name'] = this.name;
+            this.message['phone'] = this.phone;
+            this.message['email'] = this.email;
+            this.message['datePicked']= this.datePicked
+            this.message['timePicked'] = this.timePicked
+            this.message['message'] = this.formMessage
+            console.log(this.message)
             this.overlay = false;
         }
     }

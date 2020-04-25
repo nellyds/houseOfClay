@@ -20,7 +20,8 @@ data(){
         datePicked: null,
         name: null,
         phone: null,
-        submitted: false
+        submitted: false,
+        overlay: false
     }
 },
 methods:{

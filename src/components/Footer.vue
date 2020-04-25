@@ -3,22 +3,54 @@
 
    <Contact />
    <Scheduler />
-   <img src="@/assets/footer.png" />
+    <v-footer
+      padless
+      color="rgba(0,0,0,0)"
+      class="footerNote"
+    >
+    <img src="@/assets/footer.png" />
+      <v-card
+        flat
+        tile
+        color="rgba(180,20,90,1)"
+        width=100%
+        class="text-center"
+      >
+
+  
+        <v-divider></v-divider>
+  
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>House of Clay</strong> design by <strong> <a href="http://www.nelson-dsilva.com">Nelson D'Silva</a></strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
 </div>
 </template>
 <script>
 import Contact from "@/components/Contact.vue";
-import Scheduler from "@/components/Scheduler.vue";
 export default {
     name: 'Footer',
     components:{
         Contact,
-        Scheduler
-    }
+    },
+    data(){
+        return{
+            message:{},
+        }
+    },
+    
 }
 </script>
 <style scoped>
-
+a{
+    color: white;
+    text-decoration: none;;
+}
+a:visited{
+    text-decoration: none;
+    color:white;
+}
 .footer{
     height: 100vh;
 
@@ -27,8 +59,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed;
 background-size: cover;
 }
+.footerNote{
+    position: absolute;
+    bottom: 10px;
+}
 img{
-    margin-top:300px;
+    
     text-align: center;
+    width: 80vw;
 }
 </style>
