@@ -3,7 +3,7 @@
       <v-container class="serviceContainer">
                     <v-row cols="16">
               <v-col cols="8" md="8" sm="16">
-                  How do we do that?
+                  <p class="header" >How do we do that?</p>
               </v-col>
           </v-row>
           <v-row cols="16">
@@ -20,7 +20,7 @@
               <Service class="blank" name="bird.png" iconUrl="bird.png" description="" />
                         </v-col>
         <v-col cols="16" sm="4" >
-                <Service data-aos="fade-left" data-aos-duration="1000" name="Consultation" iconUrl="mentalColor.png" description="We will think about this later" />
+                <Service data-aos="fade-left" data-aos-duration="1000" name="Consultation" iconUrl="cross.png" description="We will think about this later" />
                           </v-col>
         <v-col cols="16" sm="4" >
               <Service data-aos="fade-left" data-aos-duration="1000" name="Medication" iconUrl="talk.png" description="We will think about this later" />
@@ -62,6 +62,10 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap');
+.header{
+        font-family: 'Kirang Haerang', cursive;
+        font-size: 2em;
+}
 .services{
     background-color:rgb(132, 190, 130);
     background-color: #c08cff;

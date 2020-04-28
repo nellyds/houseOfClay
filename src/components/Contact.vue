@@ -1,7 +1,7 @@
 <template>
 <div v-ripple class="contact" >
 
-    <p @click="overlay =!overlay" text > Send us a message </p>
+    <p class="header" @click="overlay =!overlay" text > Send us a message </p>
          <v-overlay
             opacity=.8
             color="black"
@@ -35,7 +35,7 @@
                         v-model="formMessage"
                         label="Message"
                     ></v-text-field>
-                    <p> Let us know a good time to contact you</p>
+                    <p class="header"> Let us know a good time to contact you</p>
                     <v-date-picker v-model="datePicked"></v-date-picker>
                     <v-time-picker v-model="timePicked"></v-time-picker>
                 <v-btn
@@ -84,6 +84,10 @@ export default {
 }
 </script>
 <style scoped>
+.header{
+        font-family: 'Kirang Haerang', cursive;
+        font-size: 2em;
+}
 @media screen and (max-width: 415px){
     .contactOverlay{
         width: 375px;

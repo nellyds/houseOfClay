@@ -16,18 +16,18 @@
           </v-row>
                     <v-row cols="16">
               <v-col cols="16" sm="4">
-                                   <div data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" class="aboutParagraph1">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                   <div data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="200" class="about Paragraph3">
+                        <p> House of Clay is a welcoming, safe place to those who are struggling with substance abuse and have reached a point of decision to break the “chains” which have kept them from being who they want to be.</p>
                  </div>
               </v-col>
               <v-col cols="16" sm="4">
-                 <div data-aos="fade-left" data-aos-duration="8000" data-aos-delay="400" class="aboutParagraph2">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 <div data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400" class="about Paragraph2">
+                        <p> Optimizing your mental, emotional, and physical health is the goal but it all depends on the individuals’ desire to do so. We discuss, evaluate and offer guidance and tools to mold yourself into who you want to become.</p>
                  </div>
               </v-col>
                 <v-col cols="16" sm="4">
-                                     <div data-aos="fade-left" data-aos-duration="600" data-aos-delay="400" class="aboutParagraph3">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit deserunt mollit anim id est laborum.</p>
+                                     <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="about Paragraph1">
+                        <p> A lump of clay may have no obvious value, but its value resides in the fact that it can be molded, shaped and transformed into something worthy. We can help you decide how to find and transform into the person you want to become; we will help you throughout your journey and get you there.</p>
                  </div>
               </v-col>
           </v-row>
@@ -78,26 +78,31 @@ background-size: cover;
     min-height: 100vh;
     font-family: 'Sunflower';
 }
-.aboutParagraph1{
+
+.about{
+      background-color: white;
+    text-align: center;  
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.Paragraph1{
     width: 400px;
     height: 400px;
     border-radius: 200px;
-    padding: 15px;
-    background-color: white;
+   padding-top:80px;
 }
-.aboutParagraph2{
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
-    padding: 15px;
-    background-color: white;
+.Paragraph2{
+    width: 326px;
+    height: 326px;
+    border-radius: 163px;
+    padding-top: 35px;
+    padding: 35px;
 }
-.aboutParagraph3{
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+.Paragraph3{
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
     padding: 15px;
-    background-color: white;
 }
 .aboutContainer img{
     width: 100%;
