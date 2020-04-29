@@ -3,28 +3,40 @@
       <v-container class="aboutContainer">
           <v-row cols="16">
               <v-col class="header" cols="8" md="8" sm="16">
-                  What we do out House of Clay
+                  What we do at House of Clay
               </v-col>
           </v-row>
           <v-row cols="16">
 
               <v-col cols="16" sm="4">
                   <v-card shaped=true color="rgba(255,255,255,.2)" >
-                <img data-aos="fade-left" data-aos-duration="1200" src="@/assets/fieldSquare.png" />
+                <img data-aos="fade-left" data-aos-duration="1200" class="field" src="@/assets/fieldSquare.png" />
                   </v-card>
               </v-col>
             <v-col cols="16" sm="4" >
+                <p class="treatmentParagraph" v-for="(belief, i) in beliefs" v-bind:key="i">
+                    {{belief}}
+                    </p>
             </v-col>
           </v-row>
                     <v-row cols="16">
               <v-col cols="16" sm="4" >
-
+                    <img class="portrait" src="@/assets/portrait3.png" />
+                    <v-btn @click="bioOverlay = !bioOverlay"> Who said that?</v-btn>
               </v-col>
               <v-col cols="16" sm="4">
                   <div class="treatmentParagraph" >
-                <p>
-                    
+                    <p>
+                    {{bio}}
                      </p>
+                     
+                     <v-overlay
+                     :value="bioOverlay"
+                     opacity=.8
+                     color=white>
+                     <p style="color: black">This is more of the about section </p>
+                     <v-btn @click="bioOverlay = false"> Done</v-btn>
+                     </v-overlay>
                   </div>
               </v-col>      
               <v-col cols="16" sm="4" />
@@ -39,11 +51,14 @@ export default {
   },
   data(){
       return{
-          steps:[
-              'A thorough evaluation is done. Initial goals are established: both short term and long term goals.',
-              'Treatment can then be determined: counseling? Medically assisted treatment? Exercise? Nutrition? Pain management?',
-              'We highly encourage AA and NA meetings. Referrals for specialized care depends on the individual needs.',
-          ]
+          beliefs:[
+              'This is a personal journey in which time and intensity is an individual process.',
+              'Seeking help, opening our hearts to ourselves and others doesn’t have to be intimidating.',
+              'It will be a mental, physical and emotional challenge but you will have wholehearted care supporting you at every step you take on your life changing journey.',
+              'Just a like the lump of clay, as we carefully cut away excess clay and caringly re-shape the lump, you will be getting rid of baggage boggling you down, and slowly but surely realize there is beauty and brilliance within each and every one of us.'
+          ],
+          bioOverlay: false,
+          bio:"Life is ever changing and evolving; and, at some point in life we all deal with different shades of “brokenness”. My drive, passion, perseverance to help and sustain others, offer guidance in some shape or form throughout the ups and downs in your journey in life, is founded and fed by my faith in God."
       }
   }
 };
@@ -70,18 +85,33 @@ font-family: 'Sunflower', sans-serif;
     width: 100vw;
     min-height: 100vh;
 }
-.aboutContainer img{
-    width: 350px;
-    height: auto;
-}
+
 .treatmentParagraph{
-    width: 350px;
-    height: 350px;
-    border-radius: 175px;
-    background-color: white;
+border-radius: 10px;
+padding: 10px;
+    background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+    font-size: 1.2em;
+
+}
+.portrait{
+    width: 100%;
+    margin: 15px;
+}
+.field{
+    width: 100%;
+    margin: 15px;
 }
 }
 @media screen and (min-width:416px){
+    .portrait{
+        width: 100%;
+        margin: 15px;
+    }
+    .field{
+        width: 100%;
+        margin: 15px;
+    }
     .aboutContainer{
 font-family: 'Sunflower', sans-serif;
     background-position-x: center;
@@ -90,17 +120,26 @@ font-family: 'Sunflower', sans-serif;
     min-height: 100vh;
 
      background-size:auto;}
-.aboutContainer img{
-    width: 600px;
-    height: auto;
-}
+
 .treatmentParagraph{
-    width: 350px;
-    height: 350px;
-    border-radius: 175px;
-    background-color: white;
+border-radius: 10px;
+padding: 10px;
+    background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
     font-size: 1.2em;
 }
+.treatmentParagraph p{
+}
+.aboutCircle{
+    background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+    width:400px;
+    height: 400px;
+    border-radius: 200px;
+}
+.aboutCircle p{
+    padding: 25%;
 
+}
 }
 </style>

@@ -1,38 +1,39 @@
 <template>
   <div class="about">
       <v-container class="aboutContainer">
+            <p class="aboutHeader" >Welcome to House of Clay!</p>
           <v-row cols="16">
-              <v-col data-aos="fade-left" data-aos-duration="1000" cols="16" sm="4">
-                  <p class="aboutHeader" >Welcome to House of Clay!</p>
+              <v-col data-aos="fade-left" data-aos-duration="1000" cols="16" md="6" sm="4">
+                <v-card shaped=true color="rgba(255,255,255,.2)" >
+                     <img data-aos="fade-left" data-aos-duration="1200" src="@/assets/houseBlank.png" />
+                </v-card>
               </v-col>
-              <v-col cols="16" sm="4">
-                  <v-card shaped=true color="rgba(255,255,255,.2)" >
-                <img data-aos="fade-left" data-aos-duration="1200" src="@/assets/houseBlank.png" />
-                  </v-card>
-              </v-col>
-                <v-col data-aos="fade-right" data-aos-duration="1000" cols="16" sm="4">
-                    <p class="aboutHeader" >What is House of Clay?</p>
+              <v-col cols="16"  md="6" sm="8">
+                  <div class="aboutCircle">
+                        <p> House of Clay is a welcoming, safe place to those who are struggling with substance abuse and have reached a point of decision to break the “chains” which have kept them from being who they want to be.</p>
+                    </div>
               </v-col>
           </v-row>
                     <v-row cols="16">
               <v-col cols="16" sm="4">
-                                   <div data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="200" class="about Paragraph3">
-                        <p> House of Clay is a welcoming, safe place to those who are struggling with substance abuse and have reached a point of decision to break the “chains” which have kept them from being who they want to be.</p>
-                 </div>
-              </v-col>
-              <v-col cols="16" sm="4">
-                 <div data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400" class="about Paragraph2">
-                        <p> Optimizing your mental, emotional, and physical health is the goal but it all depends on the individuals’ desire to do so. We discuss, evaluate and offer guidance and tools to mold yourself into who you want to become.</p>
-                 </div>
+                    <div data-aos="fade-left" data-aos-duration="1000" class="whyCircle">
+                       <p>A lump of clay may have no obvious value, but its value resides in the fact that it can be molded, shaped and transformed into something worthy. </p>
+                    </div>
               </v-col>
                 <v-col cols="16" sm="4">
-                                     <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="about Paragraph1">
-                        <p> A lump of clay may have no obvious value, but its value resides in the fact that it can be molded, shaped and transformed into something worthy. We can help you decide how to find and transform into the person you want to become; we will help you throughout your journey and get you there.</p>
-                 </div>
+                    <div data-aos="fade-left" data-aos-duration="1000" class="whyCircle two">
+                       <p>We can help you decide how to find and transform into the person you want to become;</p>
+                    </div>
+              </v-col>
+            <v-col cols="16" sm="4">
+                    <div data-aos="fade-left" data-aos-duration="1000" class="whyCircle three">
+                       <p>We can help you decide how to find and transform into the person you want to become;</p>
+                    </div>
               </v-col>
           </v-row>
       </v-container>
   </div>
+  
 </template>
 
 <script>
@@ -57,6 +58,30 @@ background-size: cover;
     min-height: 100vh;
     font-family: 'Sunflower';
 }
+.aboutCircle{
+    background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+    width:360px;
+    height: 360px;
+    border-radius: 180px;
+    color: black;
+}
+.aboutCircle p{
+
+    padding: 90px;
+
+}
+.whyCircle{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+        background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+}
+.whyCircle p{
+    padding: 50px;
+    color:black;
+}
 .aboutContainer img{
     width: 350px;
     height: auto;
@@ -80,38 +105,50 @@ background-size: cover;
 }
 
 .about{
-      background-color: white;
+      background-color: rgba(255,255,255,.7);
     text-align: center;  
     font-weight: bold;
     font-size: 1.1em;
 }
-.Paragraph1{
-    width: 400px;
-    height: 400px;
+.aboutCircle{
+        background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+    width:425px;
+    height: 425px;
     border-radius: 200px;
-   padding-top:80px;
 }
-.Paragraph2{
-    width: 326px;
-    height: 326px;
-    border-radius: 163px;
-    padding-top: 35px;
-    padding: 35px;
-}
-.Paragraph3{
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
-    padding: 15px;
+.aboutCircle p{
+    padding: 100px;
+
 }
 .aboutContainer img{
     width: 100%;
     height: auto;
 }
+
 .aboutHeader{
         font-family: 'Kirang Haerang', cursive;
         font-size:3em;
         text-align: center;
+}
+.whyCircle{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+        background-color: rgba(255,255,255,.7);
+    border: solid 2px white;
+}
+.whyCircle p{
+    padding: 50px;
+    color:black;
+}
+.two{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.three{
+    font-size: 1.3em;
+    font-weight: bolder;
 }
 }
 
