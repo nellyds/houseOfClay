@@ -1,7 +1,6 @@
 <template>
-<div v-ripple class="contact" >
+<div class="contact" >
     <v-row
-
     >
         <v-col>
             <p class="header" @click="legalOverlay = !legalOverlay">Frequently Asked Questions</p>
@@ -24,11 +23,15 @@
             :z-index="5"
           >
             <div class="contactOverlay">
+                
                 <v-form 
+                v-if="showContact"
                 ref="form"
                 v-model="valid"
                 :lazy-validation="lazy"
+                data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" 
                 >
+                <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="header"> Who Are You?</p>
                     <v-text-field
                         v-model="name"
                         :counter="10"
@@ -49,33 +52,51 @@
                         v-model="formMessage"
                         label="Message"
                     ></v-text-field>
-                    <v-btn @click="overlay = !overlay">Done! </v-btn>
+                    <v-btn @click="submitContact">Done! </v-btn>
                 </v-form>
             </div>
-          </v-overlay>
-          <p class="header" @click="timeOverlay = !timeOverlay">Let us know a good time to contact you.</p>
-          <v-overlay 
-          color="black"
-          :value="timeOverlay"
-          :z-index="5"
-          >
-                    <v-date-picker v-model="datePicked"></v-date-picker>
-                    <v-time-picker v-model="timePicked"></v-time-picker>
-                     <v-btn @click="timeOverlay = !timeOverlay">Done! </v-btn>
-          </v-overlay>
-          <v-btn color="primary" >submit</v-btn>
+            <div v-if="showTime">
+                <v-col>
+                     <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="header"> What would be a good time to call you....</p>
+                <v-time-picker color="rgb(55,165,189)" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" v-model="timePicked"></v-time-picker>
+                </v-col>
+            <v-btn @click="timeSubmit">Done! </v-btn>
+            </div>
+            <div v-if="showDate">
+                <v-col>
+                     <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="header"> And on what day?</p>
+                <v-date-picker color="rgb(55,165,189)"  data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" v-model="datePicked" />
+                </v-col>
+            <v-btn @click="dateSubmit">Done! </v-btn>
+            </div> 
+            <div @click="overlay = !overlay">
+                <p class="header" >Looking forward to talking with you!</p>
+            <img data-aos="fade-left" 
+                data-aos-duration="400" 
+                data-aos-delay="200" 
+                v-if="infoComplete" 
+                @click="overlay = !overlay"
+                class="letter" src="@/assets/letter4.svg" />
+            </div>
+         </v-overlay>
         </v-col>
     </v-row>
+
+
+
 </div>
 </template>
 <script>
 export default {
     data(){
         return{
-            overlay: false,
-            timeOverlay:false,
+            showContact: true,
+            showTime: false,
+            showDate: false,
             resumeOverlay: false,
+            overlay: false,
             legalOverlay: false,
+            infoComplete: false,
             valid: true,
             datePicked: null,
             timePicked: null,
@@ -106,11 +127,34 @@ export default {
             this.message['message'] = this.formMessage
             console.log(this.message)
             this.overlay = false;
+        },
+        timeSubmit: function(){
+            if (this.timePicked != null){
+                    this.showTime = false;
+                    this.showDate = true;
+                
+            }
+        },
+        submitContact: function(){
+            if (this.name !=null && this.phone != null && this.email != null && this.message != null){
+            this.showContact = false;
+            this.showTime = true;
+            }
+        },
+        dateSubmit: function(){
+            if (this.datePicked != null){
+                this.showDate = false;
+                this.infoComplete = true;
+            }
         }
     }
 }
 </script>
 <style scoped>
+.letter{
+    width:300px;
+    height: 300px;
+}
 .header{
         font-family: 'Kirang Haerang', cursive;
         font-size: 2em;

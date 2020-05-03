@@ -49,11 +49,11 @@ export default {
   data(){
       return{
           services:[
-              {name: 'Consultation', iconUrl:'bird.png', description: 'We will think about how to descrine this later'},
-              {name: 'Medication', iconUrl:'house.png', description: 'We will think about how to descrine this later'},
-              {name: 'Gestalt', iconUrl:'mentalColor.png', description: 'We will think about how to descrine this later'},
-              {name: 'Talk', iconUrl:'talk.png', description: 'We will think about how to describe this later'},
-              {name: 'I dont know', iconUrl:'calendar.png', description: 'We will think about how to describe this later'},
+              {name: 'Physical Examination', iconUrl:'bird.png', description: 'We will think about how to descrine this later'},
+              {name: 'Medically Assisted Treatment Services', iconUrl:'house.png', description: 'We will think about how to descrine this later'},
+              {name: 'Counseling', iconUrl:'mentalColor.png', description: 'We will think about how to descrine this later'},
+              {name: 'Urine Toxicology', iconUrl:'talk.png', description: 'We will think about how to describe this later'},
+              {name: 'Pharmacogenomics', iconUrl:'calendar.png', description: 'We will think about how to describe this later'},
               {name: 'I dont know either', iconUrl:'mountain.png', description: 'We will think about how to describe this later'},
           ]
       }

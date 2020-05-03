@@ -1,6 +1,5 @@
 <template>
 <div class="footer">
-
    <Contact />
    <Scheduler />
     <v-footer
@@ -16,10 +15,7 @@
         width=100%
         class="text-center"
       >
-
-  
         <v-divider></v-divider>
-  
         <v-card-text class="white--text">
           {{ new Date().getFullYear() }} — <strong>House of Clay</strong> design by <strong> <a href="http://www.nelson-dsilva.com">Nelson D'Silva</a></strong>
         </v-card-text>
