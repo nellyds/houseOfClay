@@ -2,6 +2,8 @@
 <div class="contact" >
     <v-row
     >
+    <v-col sm="6" md="4">
+    </v-col>
         <v-col>
             <p class="header" @click="legalOverlay = !legalOverlay">Frequently Asked Questions</p>
           <v-overlay 

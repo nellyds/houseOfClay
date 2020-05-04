@@ -81,6 +81,7 @@ padding: 10px;
 }
 .aboutCircle p{
   font-family: 'Sunflower';
+  color: black;
 }
 .treatmentSteps{
     display: flex;
@@ -117,7 +118,7 @@ padding: 10px;
     font-size: 1.2em;
 }
 .aboutCircle p{
-
+color: black;
 
 }
 }
