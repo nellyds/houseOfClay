@@ -61,9 +61,8 @@ background-size: cover;
 .aboutCircle{
     background-color: rgba(255,255,255,.7);
     border: solid 2px white;
-    width:360px;
-    height: 360px;
-    border-radius: 180px;
+width: 100%;
+border-radius: 50%;
     color: black;
 }
 .aboutCircle p{
@@ -113,9 +112,8 @@ background-size: cover;
 .aboutCircle{
         background-color: rgba(255,255,255,.7);
     border: solid 2px white;
-    width:425px;
-    height: 425px;
-    border-radius: 200px;
+width: 100%;
+border-radius: 20px;
 }
 .aboutCircle p{
     padding: 100px;
@@ -132,9 +130,8 @@ background-size: cover;
         text-align: center;
 }
 .whyCircle{
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
+width: 100%;
+border-radius: 20px;
         background-color: rgba(255,255,255,.7);
     border: solid 2px white;
 }

@@ -54,9 +54,8 @@ export default {
 }
 .card{
 
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
+width: 100%;
+border-radius: 50%;
     border: solid 2px white;
     background-color: rgba(255, 255, 255, 0.7);
     margin: 15px;
