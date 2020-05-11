@@ -2,7 +2,8 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-img data-aos="fade-right" 
+        <v-img
+          data-aos="fade-right"
           :src="require('../assets/logo.svg')"
           class="my-3"
           contain
@@ -15,7 +16,7 @@
           Welcome to Vuetify
         </h1>
 
-        <p data-aos="fade-left"  class="subheading font-weight-regular">
+        <p data-aos="fade-left" class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br />please join our online
           <a href="https://community.vuetifyjs.com" target="_blank"
@@ -61,7 +62,7 @@
       </v-col>
 
       <v-col class="mb-5" cols="12">
-        <h2 data-aos="fade-left"  class="headline font-weight-bold mb-3">
+        <h2 data-aos="fade-left" class="headline font-weight-bold mb-3">
           Ecosystem
         </h2>
 

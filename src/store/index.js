@@ -5,12 +5,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    message:{
-      name:'',
-      phone:'',
-      date:null,
-      time:null,
-      message:''
+    message: {
+      name: "",
+      phone: "",
+      date: null,
+      time: null,
+      message: ""
     }
   },
   mutations: {},
