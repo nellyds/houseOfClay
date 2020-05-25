@@ -16,7 +16,6 @@
                                 </div>
                             </transition>
                         </div>
-                        <!-- living proof: documentary -->
                         <img @click="showQuote" src="@/assets/talk.png">
                         <v-btn text @click="testimonialOverlay = false">Done!</v-btn>
                     </v-overlay>

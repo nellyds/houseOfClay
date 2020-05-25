@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Intro from "@/components/Intro.vue";
 import About from "@/components/About.vue";
 import Treatment from "@/components/Treatment.vue";
@@ -27,7 +26,7 @@ export default {
     Treatment,
     Services,
     Philosophy,
-    Footer
+    Footer, 
   }
 };
 </script>

@@ -8,12 +8,13 @@
         :src="require('@/assets/' + iconUrl)"
       />
       <transition name="fade">
-        <p class="serviceName">{{ name }}</p>
+        <p v-if="!showDescription" class="serviceName">{{ name }}</p>
       </transition>
-    </div>
-    <transition name="roll">
-      <p class="serviceDescription" v-if="showDescription">{{description}}</p>
+      <transition name="fade">
+        <p class="serviceDescription" v-if="showDescription">{{description}}</p>
     </transition>
+    </div>
+
     </v-row>
   </div>
 </template>
@@ -42,14 +43,9 @@ export default {
   }
   .serviceDescription {
     text-align: center;
-    font-size: 1em;
+    font-size: 1.4em;
     font-family: "Sunflower";
-    width: 100%;
-    border-radius: 50%;
-    background-color:rgba(255, 225, 255, .5);
-    border: solid 2px white;
-    width: 330px;
-    height: 330px;
+
 
   }
   .serviceIcon {

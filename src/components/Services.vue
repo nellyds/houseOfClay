@@ -1,62 +1,13 @@
 <template>
   <div class="services">
     <v-container class="serviceContainer">
+        <div  v-if="!showGoals" >
       <v-row cols="16">
         <v-col cols="8" md="8" sm="16">
           <p class="header">How do we do that?</p>
         </v-col>
       </v-row>
       <v-row cols="16">
-        <v-col cols="16" sm="4">
-          <Service
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            name="Consultation"
-            iconUrl="bird.png"
-            description="We will think about this later"
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col data-aos="fade-left" data-aos-duration="1000" cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            name="Medication"
-            iconUrl="mentalColor.png"
-            description="At House of Clay, we believe in finding the right medications to help you get well."
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
         <v-col cols="16" sm="4">
           <Service
             class="blank"
@@ -81,21 +32,84 @@
             iconUrl="mountain.png"
             description="On your wellness journey, we plan for milestones to pass and plan for the challenges you will face."
           />
+          <p @click="showGoals = true">....and</p>
+        </v-col>
+        <v-col data-aos="fade-left" data-aos-duration="1000" cols="16" sm="4">
+          <Service
+            class="blank"
+            name="bird.png"
+            iconUrl="bird.png"
+            description=""
+          />
+        </v-col>
+        <v-col cols="16" sm="4">
+          <Service
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            name="Medication"
+            iconUrl="mentalColor.png"
+            description="If needed, we consider what medications will best prepare you for what is ahead."
+          />
+        </v-col>
+        <v-col cols="16" sm="4">
+          <Service
+            class="blank"
+            name="bird.png"
+            iconUrl="bird.png"
+            description=""
+          />
+        </v-col>
+        <v-col cols="16" sm="4">
+          <Service
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            name="Consultation"
+            iconUrl="bird.png"
+            description="It starts with getting to know you and gaining trust."
+          />
+        </v-col>
+        <v-col cols="16" sm="4">
+          <Service
+            class="blank"
+            name="bird.png"
+            iconUrl="bird.png"
+            description=""
+          />
+        </v-col>
+        <v-col cols="16" sm="4">
+          <Service
+            class="blank"
+            name="bird.png"
+            iconUrl="bird.png"
+            description=""
+          />
         </v-col>
       </v-row>
+        </div>
+        <div v-if="showGoals">
+          <p class="header">And what might THAT look like?</p>
+      <v-row cols="16">
+        <Goals data-aos="fade-left" data-aos-duration="800" />
+
+      </v-row>
+              <v-btn @click="showGoals=false" >I get it now</v-btn>
+        </div>
     </v-container>
   </div>
 </template>
 
 <script>
 import Service from "@/components/Service";
+import Goals from "@/components/Goals";
 export default {
   name: "Services",
   components: {
-    Service
+    Service,
+    Goals
   },
   data() {
     return {
+      showGoals: false,
       services: [
         {
           name: "Physical Examination",
@@ -136,7 +150,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap");
 .header {
   font-family: "Kirang Haerang", cursive;
-  font-size: 2em;
+  font-size: 3.5em;
 }
 .services {
   background-color: rgb(132, 190, 130);
@@ -170,5 +184,16 @@ export default {
   .blank {
     opacity: 0;
   }
+  .goalCircle {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid 2px white;
+    margin: 10px;
+        color: black;
+    padding: 10px;
+    font-size: 1.3em;
+  }
 }
+
 </style>
