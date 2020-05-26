@@ -26,7 +26,45 @@ export default {
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap");
-@media screen and (min-width: 416px) {
+@media screen  and (min-width: 1200px){
+  .sunTarget {
+    height: 15%;
+    width: 15%;
+    margin-left: 50px;
+    margin-top: 200px;
+  position: absolute;
+  }
+  .sunTarget p {
+    font-family: "Kirang Haerang", cursive;
+    font-weight: 300;
+    font-size: 3em;
+  }
+
+  .personTarget {
+    height: 15%;
+    width: 15%;
+    margin-left: 30%;
+    margin-top: 25%;
+position: absolute;
+  }
+  .personTarget p {
+    font-family: "Kirang Haerang", cursive;
+    font-weight: 300;
+    font-size: 3em;
+  }
+
+  .cloudTarget {
+    height: 15%;
+    margin-left: 55%;
+    margin-top: 30%;
+    position: absolute;
+  }
+  .cloudTarget p {
+    font-family: "Kirang Haerang", cursive;
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 1199px) {
   .sunTarget {
     height: 15%;
     width: 15%;
@@ -52,9 +90,7 @@ export default {
     font-weight: 300;
     font-size: 3em;
   }
-  .img {
-    position: absolute;
-  }
+
   .cloudTarget {
     height: 15%;
     width: 15%;
@@ -65,6 +101,9 @@ export default {
   .cloudTarget p {
     font-family: "Kirang Haerang", cursive;
     font-size: 3em;
+  }
+    .img {
+    position: absolute;
   }
 }
 @media screen and (max-width: 415px) {
@@ -85,24 +124,26 @@ export default {
   .personTarget {
     height: 15%;
     width: 15%;
-    margin-left: 55%;
+    margin-left: 35%;
     margin-top: 25%;
     position: absolute;
   }
   .personTarget p {
     font-family: "Kirang Haerang", cursive;
     font-weight: 300;
+        font-size: 1.2em;
   }
   .cloudTarget {
     height: 15%;
     width: 15%;
     margin-left: 75%;
-    margin-top: 20%;
+    margin-top: 30%;
     position: absolute;
   }
   .cloudTarget p {
     font-family: "Kirang Haerang", cursive;
     font-weight: 300;
+        font-size: 1.2em;
   }
 }
 </style>

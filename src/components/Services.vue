@@ -1,47 +1,24 @@
 <template>
   <div class="services">
     <v-container class="serviceContainer">
-        <div  v-if="!showGoals" >
+        <div  v-if="services" >
       <v-row cols="16">
         <v-col cols="8" md="8" sm="16">
           <p class="header">How do we do that?</p>
         </v-col>
       </v-row>
       <v-row cols="16">
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
+      <v-col cols="16" sm="4">
           <Service
             data-aos="fade-left"
             data-aos-duration="1000"
-            name="Setting Goals"
-            iconUrl="mountain.png"
-            description="On your wellness journey, we plan for milestones to pass and plan for the challenges you will face."
-          />
-          <p @click="showGoals = true">....and</p>
-        </v-col>
-        <v-col data-aos="fade-left" data-aos-duration="1000" cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
+            name="Consultation"
             iconUrl="bird.png"
-            description=""
+            description="It starts with getting to know you and gaining trust."
           />
+           <v-btn color="rgba(0,0,0,0)" @click="showPhilosophy">Read On</v-btn>
         </v-col>
+        
         <v-col cols="16" sm="4">
           <Service
             data-aos="fade-left"
@@ -53,46 +30,29 @@
         </v-col>
         <v-col cols="16" sm="4">
           <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
             data-aos="fade-left"
             data-aos-duration="1000"
-            name="Consultation"
-            iconUrl="bird.png"
-            description="It starts with getting to know you and gaining trust."
+            name="Setting Goals"
+            iconUrl="mountain.png"
+            description="On your wellness journey, we plan for milestones to pass and plan for the challenges you will face."
           />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            class="blank"
-            name="bird.png"
-            iconUrl="bird.png"
-            description=""
-          />
+          <v-btn color="rgba(0,0,0,0)" @click="showGoals">Read On</v-btn>
         </v-col>
       </v-row>
         </div>
-        <div v-if="showGoals">
+        <div v-if="goals">
           <p class="header">And what might THAT look like?</p>
       <v-row cols="16">
         <Goals data-aos="fade-left" data-aos-duration="800" />
-
       </v-row>
-              <v-btn @click="showGoals=false" >I get it now</v-btn>
+              <v-btn  color="rgba(0,0,0,0)" @click="revert" >I get it now</v-btn>
+        </div>
+        <div v-if="philosophy">
+          <p class="header"> How would this start?</p>
+                <v-row cols="16">
+        <Philosophy data-aos="fade-left" data-aos-duration="800" />
+      </v-row>
+              <v-btn  color="rgba(0,0,0,0)" @click="revert" >I get it now</v-btn>
         </div>
     </v-container>
   </div>
@@ -101,15 +61,18 @@
 <script>
 import Service from "@/components/Service";
 import Goals from "@/components/Goals";
+import Philosophy from "@/components/Philosophy.vue";
 export default {
   name: "Services",
   components: {
     Service,
-    Goals
+    Goals,
+    Philosophy
   },
   data() {
     return {
-      showGoals: false,
+      goals: false,
+      philosophy: false,
       services: [
         {
           name: "Physical Examination",
@@ -143,6 +106,21 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    showPhilosophy: function(){
+      this.services = false
+      this.philosophy = true
+    },
+    showGoals: function(){
+      this.services = false
+      this.goals = true
+    },
+    revert: function(){
+      this.goals = false,
+      this.philosophy = false,
+      this.services = true
+    }
   }
 };
 </script>

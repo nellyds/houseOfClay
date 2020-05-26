@@ -35,104 +35,6 @@ export default {
 };
 </script>
 <style scoped>
-@media screen and (min-width: 416px) {
-  .serviceName {
-    text-align: center;
-    font-size: 1.4em;
-    font-family: "Sunflower";
-  }
-  .serviceDescription {
-    text-align: center;
-    font-size: 1.4em;
-    font-family: "Sunflower";
-
-
-  }
-  .serviceIcon {
-    min-width: 100px;
-    max-width: 100px;
-    padding: 10px;
-    border-radius: 50px;
-    border: solid 2px white;
-    background-color: rgba(43, 128, 177, 0.7);
-  }
-  .card {
-    width: 100%;
-    border-radius: 50%;
-    border: solid 2px white;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin: 15px;
-  }
-
-  .service {
-    width: 330px;
-    height: 330px;
-  }
-  .roll-enter{
-    opacity: 0;
-    transform:translateY(-200px);
-  }
-  .roll-enter-to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  .roll-enter-active {
-    transition: opacity, transform 800ms ease-out;
-  }
-  .roll-leave {
-    opacity: 1;
-    transform: translateY(0px)
-  }
-  .roll-leave-to {
-    opacity: 1;
-    transform: translateY(-200px)
-  }
-  .roll-leave-active {
-    transition: opacity, transform 200ms ease-out;
-  }
-}
-
-@media screen and (max-width: 415px) {
-  .serviceName {
-    text-align: center;
-    font-size: 1.4em;
-    font-family: "Sunflower";
-  }
-  .serviceDescription {
-    text-align: center;
-    font-size: 1em;
-    font-family: "Sunflower";
-    width: 100%;
-    border-radius: 15px;
-    background-color:rgba(255, 225, 255, 1);
-    border: solid 2px white;
-    padding: 10px;
-
-  }
-  .blank {
-    display: none;
-  }
-  .textCard {
-    color: white;
-  }
-  .card {
-    width: 100%;
-    border-radius: 50%;
-    border: solid 2px white;
-  }
-  .serviceIcon {
-    width: 95x;
-    height: 95px;
-    padding: 10px;
-    border-radius: 25%;
-  }
-
-  .service {
-    width: 330px;
-    height: 330px;
-    animation: enter 0.2;
-  }
-}
 .serviceIcon {
   min-width: 100px;
   max-width: 100px;
@@ -157,17 +59,12 @@ export default {
   }
 }
 .card {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
+  padding: 10px;
+  width: 330px;
+  border-radius: 15px;
   border: solid 2px white;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 15px;
-}
-.service {
-  width: 330px;
-  height: 330px;
-  animation: enter 0.2;
 }
   .roll-enter{
     opacity: 0;
@@ -213,4 +110,101 @@ export default {
   .fade-leave-active {
     transition: opacity, transform 400ms ease-out;
   }
+@media screen and (max-width: 415px) {
+  .serviceName {
+    text-align: center;
+    font-size: 1.4em;
+    font-family: "Sunflower";
+  }
+  .serviceDescription {
+    text-align: center;
+    font-size: 1em;
+    font-family: "Sunflower";
+    width: 100%;
+    border-radius: 15px;
+    background-color:rgba(255, 225, 255, 1);
+    border: solid 2px white;
+    padding: 10px;
+
+  }
+  .blank {
+    display: none;
+  }
+  .textCard {
+    color: white;
+  }
+  .card {
+    padding: 10px;
+    border-radius: 5%;
+    border: solid 2px white;
+  }
+  .serviceIcon {
+    width: 95x;
+    height: 95px;
+    padding: 10px;
+    border-radius: 25%;
+  }
+
+  .service {
+    width: 330px;
+    animation: enter 0.2;
+  }
+}
+@media screen and (min-width: 416px) {
+  .serviceName {
+    text-align: center;
+    font-size: 1.4em;
+    font-family: "Sunflower";
+  }
+  .serviceDescription {
+    text-align: center;
+    font-size: 1.4em;
+    font-family: "Sunflower";
+
+
+  }
+  .serviceIcon {
+    min-width: 100px;
+    max-width: 100px;
+    padding: 10px;
+    border-radius: 50px;
+    border: solid 2px white;
+    background-color: rgba(43, 128, 177, 0.7);
+  }
+  .card {
+    width: 100%;
+    height: 300px;
+    border-radius: 5%;
+    border: solid 2px white;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 15px;
+  }
+
+  .service {
+
+    height: 330px;
+  }
+  .roll-enter{
+    opacity: 0;
+    transform:translateY(-200px);
+  }
+  .roll-enter-to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .roll-enter-active {
+    transition: opacity, transform 800ms ease-out;
+  }
+  .roll-leave {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+  .roll-leave-to {
+    opacity: 1;
+    transform: translateY(-200px)
+  }
+  .roll-leave-active {
+    transition: opacity, transform 200ms ease-out;
+  }
+}
 </style>

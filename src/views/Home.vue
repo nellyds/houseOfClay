@@ -4,7 +4,6 @@
       <Intro />
       <About id="about" />
       <Treatment id="treatment" />
-      <Philosophy />
       <Services id="services" />
       <Footer />
     </v-container>
@@ -17,7 +16,6 @@ import About from "@/components/About.vue";
 import Treatment from "@/components/Treatment.vue";
 import Services from "@/components/Services.vue";
 import Footer from "@/components/Footer.vue";
-import Philosophy from "@/components/Philosophy.vue";
 export default {
   name: "Home",
   components: {
@@ -25,7 +23,6 @@ export default {
     About,
     Treatment,
     Services,
-    Philosophy,
     Footer, 
   }
 };

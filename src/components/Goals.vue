@@ -1,7 +1,7 @@
 <template >
     <div class="goals">
         <v-row cols="16">
-            <v-col md="4" />
+            <v-col md="1" />
             <v-col md="8">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 598">
             <polygon fill="#8A0086" stroke="#ffffff" class="flag"                                                        points="0 597.5  65 80    130 597.5   195 300   260 597.5   325 100   370 597.5">
@@ -161,8 +161,7 @@ anim: function(){
   .blank {
     opacity: 0;
   }
-}
-.goalParagraph{
+  .goalParagraph{
     border: solid 2px white;
     background-color:rgba(255, 225, 255, .8);
     font-size: 1.4em;
@@ -183,6 +182,8 @@ anim: function(){
     width: 800px;
     margin-left:100px;
 }
+}
+
 .slide-enter{
     transform: scaleY(0);
 }
@@ -201,21 +202,41 @@ anim: function(){
 .exit-leave-active{
     transition: transform 800ms;
 }
-.bounce-enter-active {
-  animation: bounce-in .5s;
-}
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
+@media screen and (max-width: 415px) {
+  .goals{
   }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+.goals svg{
+    height: 30vh;
+    width: 95vw;
+    border-bottom: 2px solid white;
+    background-color: rgba(202, 194, 72, 0.2);
+    border-radius: 30%;
 }
+  .blank {
+    opacity: 0;
+  }
+  .goalParagraph{
+    border: solid 2px white;
+    background-color:rgba(255, 225, 255, .8);
+    font-size: 1em;
+    padding:10px;
+    border-radius: 15px;
+    width: 90vw;
+    text-align: center;
+    margin:10px;
+
+}
+.goalForm{
+    border: solid 2px white;
+    background-color:rgba(255, 225, 255, .8);
+    font-size: 1em;
+    padding:10px;
+    margin: 5px;
+    border-radius: 15px;
+    width: 90vw;
+
+}
+}
+
+
 </style>

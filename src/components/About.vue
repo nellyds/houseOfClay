@@ -19,13 +19,15 @@
           </v-card>
         </v-col>
         <v-col cols="16" md="6" sm="8">
-            <p class="aboutParagraph">
+          <div class="aboutParagraph" data-aos="fade-left" data-aos-duration="1000" >
+            <p>
               House of Clay is a welcoming, safe place to those who are
               struggling with substance abuse and have reached a point of
               decision to break the “chains” which have kept them from being who
               they want to be.
             </p>
-            <div data-aos="fade-left" data-aos-duration="1000" class="whyCircle">
+          </div>
+            <div data-aos="fade-left" data-aos-duration="1000" class="aboutParagraph">
             <p>
               A lump of clay may have no obvious value, but its value resides in
               the fact that it can be molded, shaped and transformed into
@@ -35,7 +37,7 @@
           <div
             data-aos="fade-left"
             data-aos-duration="1000"
-            class="whyCircle two"
+            class="aboutParagraph"
           >
             <p>
               We can help you decide how to find and transform into the person
@@ -45,7 +47,7 @@
                     <div
             data-aos="fade-left"
             data-aos-duration="1000"
-            class="whyCircle two"
+            class="aboutParagraph"
           >
             <p>
               We can help you decide how to find and transform into the person
@@ -78,25 +80,14 @@ export default {
     min-height: 100vh;
     font-family: "Sunflower";
   }
-  .aboutCircle {
+  .aboutParagraph {
     background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
-    width: 100%;
-    border-radius: 50%;
-    color: black;
+    margin: 10px;
+    border-radius: 10px;
   }
-  .aboutCircle p {
-    padding: 90px;
-  }
-  .whyCircle {
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: solid 2px white;
-  }
-  .whyCircle p {
-    padding: 50px;
+  .aboutParagraph p {
+    padding: 10px;
     color: black;
   }
   .aboutContainer img {
@@ -110,11 +101,12 @@ export default {
 }
 @media screen and (min-width: 416px) {
   .aboutParagraph{
-    font-size: 1.8em;
+    font-size: 1.2em;
     background-color:rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     padding: 15px;
     border-radius: 15px;
+    margin: 10px;
   }
   .aboutContainer {
     background-color: #ffe730;
@@ -134,16 +126,7 @@ export default {
     font-weight: bold;
     font-size: 1.1em;
   }
-  .aboutCircle {
-    background-color: rgba(255, 255, 255, 0.7);
-    border: solid 2px white;
-    width: 100%;
-    border-radius: 20px;
-    margin: 10px;
-  }
-  .aboutCircle p {
-    padding: 100px;
-  }
+
   .aboutContainer img {
     width: 100%;
     height: auto;
@@ -153,18 +136,6 @@ export default {
     font-family: "Kirang Haerang", cursive;
     font-size: 3em;
     text-align: center;
-  }
-  .whyCircle {
-    width: 100%;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: solid 2px white;
-    margin: 10px;
-  }
-  .whyCircle p {
-    color: black;
-    padding: 10px;
-    font-size: 1.3em;
   }
 
 }
