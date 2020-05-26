@@ -71,7 +71,6 @@ export default {
   }
 }
 .philosophy {
-  
   background-attachment: fixed;
   height: 100vh;
   background-size: cover;
