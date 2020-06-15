@@ -93,7 +93,7 @@ export default {
   methods: {
     submit: function() {
       this.$http
-        .post("http://127.0.0.1:5000/hoc/message/dispatch", {
+        .post("https://nelsondsilva.pythonanywhere.com/hoc/message/dispatch", {
           name: this.name,
           phone: this.phone,
           email: this.email,
@@ -103,7 +103,7 @@ export default {
           window.alert(result.data.message);
         })
         .catch(() => {
-          window.alert("what is going on?");
+          window.alert("Internal Service Error");
         });
       this.overlay = false;
     },
