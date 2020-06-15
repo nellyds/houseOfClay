@@ -6,8 +6,6 @@
       class="carouselContainer"
       cycle
       height="$vuetify.breakpoint.smAndDown? 400 : 800"
-      hide-delimiters
-      show-arrows-on-hover
     >
       <v-carousel-item v-for="(step, i) in steps" :key="i">
         <v-sheet height="100%" color="rgba(255,255,255,0)">
@@ -16,7 +14,7 @@
               <p>{{ step.content }}</p>
             </div>
           </v-row>
-              <div style="height:50px;" />
+          <div style="height:50px;" />
           <v-row align="center" justify="center">
             <v-card color="rgba(255,255,255,.1">
               <img :src="require('@/assets/' + step.imageUrl)" />
@@ -34,21 +32,21 @@ export default {
       steps: [
         {
           content:
-            "A thorough evaluation is done. Initial goals are established: both short term and long term goals.",
+            "The journey starts with an introduction.  Who are you?  What brought you here?  Where do you want to go?  What would you like help with?",
           imageUrl: "house1.png"
         },
         {
           content:
-            "Treatment can then be determined: counseling? Medically assisted treatment? Exercise? Nutrition? Pain management?",
+            "Next, a treatment plan is determined based on your needs.  For some Medically Assissted Treatment may be necessary; for others counseling alone may suffice.  Whatever is needed will be determined by the patients needs and goals.",
           imageUrl: "house2.png"
         },
         {
           content:
-            "We highly encourage AA and NA meetings. Referrals for specialized care depends on the individual needs.",
+            "We encourage outside participation in AA, NA, and other recovery fellowships.  Joining communities of recovery is a helpful, but not solely sufficient, means of recovery.",
           imageUrl: "house3.png"
         },
         {
-          content: "A fourth slide of equally important content.",
+          content: "As your journey to wellness progresses, we will work with you as you reassess your life, whether it be your medication regimen or your goals in recovery.  Work does not finish, and you connection does not end!",
           imageUrl: "house4.png"
         }
       ]
@@ -63,7 +61,7 @@ export default {
   font-size: 2em;
 }
 @media screen and (min-width: 1101px) {
-  .carouselContainer{
+  .carouselContainer {
     margin-left: 40%;
   }
   img {
@@ -82,6 +80,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.7);
   border: solid 2px white;
   font-size: 1.2em;
+  max-width: 520px;
 }
 .aboutCircle p {
   font-family: "Sunflower";
@@ -101,7 +100,6 @@ export default {
   }
 }
 .philosophy {
-  
   background-attachment: fixed;
   height: 100vh;
   background-size: cover;
@@ -113,6 +111,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.7);
   border: solid 2px white;
   font-size: 1.2em;
+  max-width: 520px;
 }
 .aboutCircle p {
   font-family: "Sunflower";
@@ -128,10 +127,9 @@ export default {
 }
 @media screen and (max-width: 415px) {
   img {
-    height: 30vh
+    height: 30vh;
   }
   .philosophy {
-    
     background-attachment: fixed;
     background-size: cover;
   }
@@ -153,6 +151,7 @@ export default {
     background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     font-size: 1.2em;
+    max-width: 320px;
   }
   .aboutCircle p {
     color: black;

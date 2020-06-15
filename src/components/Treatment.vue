@@ -1,47 +1,46 @@
 <template>
   <div class="Treatment">
     <v-container class="aboutContainer">
-      <p class="aboutHeader">What we do at House of Clay </p>
+      <p class="aboutHeader">What we do at House of Clay</p>
       <v-row cols="16">
         <v-col cols="2" md="2" sm="0" />
-      <v-col
-        data-aos="fade-left"
-        data-aos-duration="1000"
-        cols="16"
-        md="16"
-        sm="16"
-      >
-        <v-card shaped="true" color="rgba(255,255,255,.2)">
-          <img
-            data-aos="fade-left"
-            data-aos-duration="1200"
-            src="@/assets/fieldSquare.png"
-          />
-        </v-card>
-      </v-col>
+        <v-col
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          cols="16"
+          md="16"
+          sm="16"
+        >
+          <v-card shaped="true" color="rgba(255,255,255,.2)">
+            <img
+              data-aos="fade-left"
+              data-aos-duration="1200"
+              src="@/assets/fieldSquare.png"
+            />
+          </v-card>
+        </v-col>
       </v-row>
-      <v-row cols ="16">
-      <v-col cols="16" md="3" sm="8">
-        <div class="treatmentParagraph">
-          <p >{{p1}}</p>
-        </div>
-      </v-col>
-            <v-col cols="16" md="3" sm="8">
-        <div class="treatmentParagraph">
-          <p >{{p2}}</p>
-        </div>
-            </v-col>
-                  <v-col cols="16" md="3" sm="8">
-        <div class="treatmentParagraph">
-          <p >{{p3}}</p>
-        </div>
+      <v-row cols="16">
+        <v-col cols="16" md="3" sm="8">
+          <div class="treatmentParagraph">
+            <p>{{ p1 }}</p>
+          </div>
         </v-col>
-          <v-col cols="16" md="3" sm="8">        
-        <div class="treatmentParagraph">
-          <p >{{p4}}</p>
-        </div>
+        <v-col cols="16" md="3" sm="8">
+          <div class="treatmentParagraph">
+            <p>{{ p2 }}</p>
+          </div>
         </v-col>
-
+        <v-col cols="16" md="3" sm="8">
+          <div class="treatmentParagraph">
+            <p>{{ p3 }}</p>
+          </div>
+        </v-col>
+        <v-col cols="16" md="3" sm="8">
+          <div class="treatmentParagraph">
+            <p>{{ p4 }}</p>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -52,11 +51,14 @@ export default {
   components: {},
   data() {
     return {
-
-        p1: "This is a personal journey in which time and intensity is an individual process.",
-        p2: "Seeking help, opening our hearts to ourselves and others doesn’t have to be intimidating.",
-        p3: "It will be a mental, physical and emotional challenge but you will have wholehearted care supporting you at every step you take on your life changing journey.",
-       p4: "Just a like the lump of clay, as we carefully cut away excess clay and caringly re-shape the lump, you will be getting rid of baggage boggling you down, and slowly but surely realize there is beauty and brilliance within each and every one of us.",
+      p1:
+        "This is a personal journey in which time and intensity is an individual process.",
+      p2:
+        "Seeking help, opening our hearts to ourselves and others doesn’t have to be intimidating.",
+      p3:
+        "It will be a mental, physical and emotional challenge but you will have wholehearted care supporting you at every step you take on your life changing journey.",
+      p4:
+        "Just a like the lump of clay, as we carefully cut away excess clay and caringly re-shape the lump, you will be getting rid of baggage boggling you down, and slowly but surely realize there is beauty and brilliance within each and every one of us.",
       bioOverlay: false,
       bio:
         "Life is ever changing and evolving; and, at some point in life we all deal with different shades of “brokenness”. My drive, passion, perseverance to help and sustain others, offer guidance in some shape or form throughout the ups and downs in your journey in life, is founded and fed by my faith in God."
@@ -88,7 +90,7 @@ export default {
     background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     border-radius: 10px;
-       font-family: "Sunflower", sans-serif;
+    font-family: "Sunflower", sans-serif;
   }
   .treatmentParagraph p {
     padding: 10px;
@@ -109,12 +111,12 @@ export default {
     font-size: 2em;
   }
 
-  .treatmentParagraph{
+  .treatmentParagraph {
     font-size: 1.1em;
-    background-color:rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     padding: 15px;
-       font-family: "Sunflower", sans-serif;
+    font-family: "Sunflower", sans-serif;
     border-radius: 15px;
     text-align: center;
   }

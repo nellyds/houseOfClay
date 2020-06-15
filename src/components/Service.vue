@@ -1,20 +1,21 @@
 <template>
   <div class="service">
     <v-row>
-    <div class="card animation">
-      <img
-        @click="showDescription = !showDescription"
-        class="serviceIcon"
-        :src="require('@/assets/' + iconUrl)"
-      />
-      <transition name="fade">
-        <p v-if="!showDescription" class="serviceName">{{ name }}</p>
-      </transition>
-      <transition name="fade">
-        <p class="serviceDescription" v-if="showDescription">{{description}}</p>
-    </transition>
-    </div>
-
+      <div class="card animation">
+        <img
+          @click="showDescription = !showDescription"
+          class="serviceIcon"
+          :src="require('@/assets/' + iconUrl)"
+        />
+        <transition name="fade">
+          <p v-if="!showDescription" class="serviceName">{{ name }}</p>
+        </transition>
+        <transition name="fade">
+          <p class="serviceDescription" v-if="showDescription">
+            {{ description }}
+          </p>
+        </transition>
+      </div>
     </v-row>
   </div>
 </template>
@@ -65,51 +66,52 @@ export default {
   border: solid 2px white;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 15px;
+  text-align: center;
 }
-  .roll-enter{
-    opacity: 0;
-    transform:translateY(-200px);
-  }
-  .roll-enter-to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  .roll-enter-active {
-    transition: opacity, transform 800ms ease-out;
-  }
-  .roll-leave {
-    opacity: 1;
-    transform: translateY(0px)
-  }
-  .roll-leave-to {
-    opacity: 1;
-    transform: translateY(-200px)
-  }
-  .roll-leave-active {
-    transition: opacity, transform 200ms ease-out;
-  }
-  .fade-enter {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .fade-enter-to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  .fade-enter-active {
-    transition: opacity, transform 400ms ease-out;
-  }
-  .fade-leave {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  .fade-leave-to {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .fade-leave-active {
-    transition: opacity, transform 400ms ease-out;
-  }
+.roll-enter {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+.roll-enter-to {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.roll-enter-active {
+  transition: opacity, transform 800ms ease-out;
+}
+.roll-leave {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.roll-leave-to {
+  opacity: 1;
+  transform: translateY(-200px);
+}
+.roll-leave-active {
+  transition: opacity, transform 200ms ease-out;
+}
+.fade-enter {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.fade-enter-active {
+  transition: opacity, transform 400ms ease-out;
+}
+.fade-leave {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.fade-leave-active {
+  transition: opacity, transform 400ms ease-out;
+}
 @media screen and (max-width: 415px) {
   .serviceName {
     text-align: center;
@@ -122,10 +124,9 @@ export default {
     font-family: "Sunflower";
     width: 100%;
     border-radius: 15px;
-    background-color:rgba(255, 225, 255, 1);
+    background-color: rgba(255, 225, 255, 1);
     border: solid 2px white;
     padding: 10px;
-
   }
   .blank {
     display: none;
@@ -160,8 +161,6 @@ export default {
     text-align: center;
     font-size: 1.4em;
     font-family: "Sunflower";
-
-
   }
   .serviceIcon {
     min-width: 100px;
@@ -181,12 +180,11 @@ export default {
   }
 
   .service {
-
     height: 330px;
   }
-  .roll-enter{
+  .roll-enter {
     opacity: 0;
-    transform:translateY(-200px);
+    transform: translateY(-200px);
   }
   .roll-enter-to {
     opacity: 1;
@@ -197,11 +195,11 @@ export default {
   }
   .roll-leave {
     opacity: 1;
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
   .roll-leave-to {
     opacity: 1;
-    transform: translateY(-200px)
+    transform: translateY(-200px);
   }
   .roll-leave-active {
     transition: opacity, transform 200ms ease-out;

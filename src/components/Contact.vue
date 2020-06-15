@@ -3,187 +3,157 @@
     <v-row>
       <v-col v-if="$vuetify.breakpoint.smAndUp" sm="6" md="4"> </v-col>
       <v-col>
-
-        <p class="header" @click="overlay = !overlay" text>Send us a message</p>
+        <div class="card">
+          <img
+            @click="overlay = !overlay"
+            class="serviceIcon"
+            src="@/assets/medical-appointment.png"
+          />
+          <p style="font-family: 'Sunflower'; padding: 5px;">
+            Send us a note: let us know how to get ahold of you to set up an
+            appointment.
+          </p>
+        </div>
+        <v-btn @click="home">Home</v-btn>
         <transition name="flip">
-        <v-overlay v-if="overlay" color="black" :value="overlay" :z-index="5">
-          <div class="contactOverlay">
-            <v-form
-              v-if="showContact"
-              ref="form"
-              v-model="valid"
-              :lazy-validation="lazy"
-              data-aos="fade-left"
-              data-aos-duration="1000"
-              data-aos-delay="600"
-            >
-              <p
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-                class="header"
-              >
-                Who Are You?
-              </p>
-              <v-text-field
-                v-model="name"
-                :counter="10"
-                :rules="nameRules"
-                label="Name"
-                required
-              ></v-text-field>
-              <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="Email"
-              ></v-text-field>
-              <v-text-field v-model="phone" label="Phone"></v-text-field>
-              <v-text-field
-                v-model="formMessage"
-                label="Message"
-              ></v-text-field>
-              <v-btn @click="submitContact">Done! </v-btn>
-            </v-form>
-          </div>
-          <div v-if="showTime">
-            <v-col>
-              <p
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-                class="header"
-              >
-                What would be a good time to call you....
-              </p>
-              <v-time-picker
-                color="rgb(55,165,189)"
+          <v-overlay v-if="overlay" color="black" :value="overlay" :z-index="5">
+            <div class="contactOverlay">
+              <v-form
+                v-if="showContact"
+                ref="form"
+                v-model="valid"
                 data-aos="fade-left"
                 data-aos-duration="1000"
                 data-aos-delay="600"
-                v-model="timePicked"
-              ></v-time-picker>
-            </v-col>
-            <v-btn @click="timeSubmit">Done! </v-btn>
-          </div>
-          <div v-if="showDate">
-            <v-col>
-              <p
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-                class="header"
               >
-                And on what day?
-              </p>
-              <v-date-picker
-                color="rgb(55,165,189)"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                data-aos-delay="400"
-                v-model="datePicked"
-              />
-            </v-col>
-            <v-btn @click="dateSubmit">Done! </v-btn>
-          </div>
-          <div @click="overlay = !overlay">
-            <p class="header">Looking forward to talking with you!</p>
-            <img
-              data-aos="fade-left"
-              data-aos-duration="400"
-              data-aos-delay="200"
-              v-if="infoComplete"
-              @click="overlay = !overlay"
-              class="letter"
-              src="@/assets/letter4.svg"
-            />
-          </div>
-        </v-overlay>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  data-aos-delay="200"
+                  class="header"
+                >
+                  Who Are You?
+                </p>
+                <v-text-field
+                  v-model="name"
+                  :counter="30"
+                  label="Name"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  hint="Format: name@domain"
+                  label="Email"
+                ></v-text-field>
+                <v-text-field
+                  v-model="phone"
+                  :rules="phoneRules"
+                  hint="Format : ###-###-####"
+                  label="Phone"
+                ></v-text-field>
+                <v-text-field
+                  v-model="formMessage"
+                  hint="What do you want to get from coming to House of Clay?"
+                  label="Message"
+                ></v-text-field>
+                <v-btn @click="submit">Submit</v-btn>
+                <v-btn @click="clear"> Clear Form </v-btn>
+              </v-form>
+            </div>
+          </v-overlay>
         </transition>
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
-
 export default {
-  components:{
-  },
+  components: {},
   data() {
     return {
-      showContact: true,
-      showTime: false,
-      showDate: false,
-      resumeOverlay: false,
       overlay: false,
-      legalOverlay: false,
       infoComplete: false,
-      testimonialOverlay: false,
+      showContact: true,
       valid: true,
-      datePicked: null,
-      timePicked: null,
       letterFilled: false,
-      faqs: [
-        {
-          question: "Do you accept private insurance?",
-          answer: "This is a cash paying office. We do not accept insurance."
-        },
-        {
-          question: "Do you perform toxicology screens and Urinalysis?",
-          answer: "Yes."
-        },
-        { question: "Another question", answer: "Another answer" },
-        {
-          question: "Is this the format of the frequently asked questions?",
-          answer: "Yes, this is the format for presenting a Q and A"
-        }
-      ],
       name: "",
       email: "",
       phone: "",
       formMessage: "",
       emailRules: [v => /.+@.+\..+/.test(v) || "E-mail must be valid"],
+      phoneRules: [
+        v =>
+          /^[2-9]\d{2}-\d{3}-\d{4}$/.test(v) ||
+          "Phone number must be in valid format"
+      ],
       message: {}
     };
   },
   methods: {
     submit: function() {
-      this.$refs.form.validate();
-      this.message["name"] = this.name;
-      this.message["phone"] = this.phone;
-      this.message["email"] = this.email;
-      this.message["datePicked"] = this.datePicked;
-      this.message["timePicked"] = this.timePicked;
-      this.message["message"] = this.formMessage;
-      console.log(this.message);
+      this.$http
+        .post("http://127.0.0.1:5000/hoc/message/dispatch", {
+          name: this.name,
+          phone: this.phone,
+          email: this.email,
+          formMessage: this.formMessage
+        })
+        .then(result => {
+          window.alert(result.data.message);
+        })
+        .catch(() => {
+          window.alert("what is going on?");
+        });
       this.overlay = false;
     },
-    timeSubmit: function() {
-      if (this.timePicked != null) {
-        this.showTime = false;
-        this.showDate = true;
-      }
+    clear: function() {
+      (this.name = ""),
+        (this.phone = ""),
+        (this.email = ""),
+        (this.phone = ""),
+        (this.formMessage = ""),
+        (this.overlay = false);
     },
-    submitContact: function() {
-      if (
-        this.name != null &&
-        this.phone != null &&
-        this.email != null &&
-        this.message != null
-      ) {
-        this.showContact = false;
-        this.showTime = true;
-      }
-    },
-    dateSubmit: function() {
-      if (this.datePicked != null) {
-        this.showDate = false;
-        this.infoComplete = true;
-      }
+    home: function() {
+      this.$router.push({ path: "/" });
     }
   }
 };
 </script>
 <style scoped>
+.serviceIcon {
+  min-width: 100px;
+  max-width: 100px;
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px white;
+  background-color: rgba(11, 28, 37, 0.7);
+  animation: pulse 2s infinite 2s;
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 225, 255, 1);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255, 28, 28, 0.3);
+    box-shadow: 0 0 0 10px rgba(255, 91, 15, 0.3);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgb(255, 238, 0);
+    box-shadow: 0 0 0 0 rgb(255, 238, 0);
+  }
+}
+.card {
+  padding: 10px;
+  width: 330px;
+  border-radius: 15px;
+  border: solid 2px white;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 15px;
+  text-align: center;
+}
 .letter {
   width: 300px;
   height: 300px;
@@ -192,23 +162,23 @@ export default {
   font-family: "Kirang Haerang", cursive;
   font-size: 2em;
 }
-.flip-enter{
-    transform: scaleY(0);
+.flip-enter {
+  transform: scaleY(0);
 }
-.flip-enter-to{
-    transform: scaleY(1);
+.flip-enter-to {
+  transform: scaleY(1);
 }
-.flip-enter-active{
-    transition: transform 400ms ease-in-out;
+.flip-enter-active {
+  transition: transform 400ms ease-in-out;
 }
-.flip-leave{
-    transform: scaleY(1)
+.flip-leave {
+  transform: scaleY(1);
 }
-.flip-leave-to{
-    transform:scaleY(0)
+.flip-leave-to {
+  transform: scaleY(0);
 }
-.flip-leave-active{
-    transition: transform 200ms ease-in-out;
+.flip-leave-active {
+  transition: transform 200ms ease-in-out;
 }
 @media screen and (max-width: 415px) {
   .contactOverlay {

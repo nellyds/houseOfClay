@@ -1,59 +1,86 @@
 <template>
   <div class="services">
     <v-container class="serviceContainer">
-        <div  v-if="services" >
-      <v-row cols="16">
-        <v-col cols="8" md="8" sm="16">
-          <p class="header">How do we do that?</p>
-        </v-col>
-      </v-row>
-      <v-row cols="16">
-      <v-col cols="16" sm="4">
-          <Service
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            name="Consultation"
-            iconUrl="bird.png"
-            description="It starts with getting to know you and gaining trust."
-          />
-           <v-btn color="rgba(0,0,0,0)" @click="showPhilosophy">Read On</v-btn>
-        </v-col>
-        
-        <v-col cols="16" sm="4">
-          <Service
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            name="Medication"
-            iconUrl="mentalColor.png"
-            description="If needed, we consider what medications will best prepare you for what is ahead."
-          />
-        </v-col>
-        <v-col cols="16" sm="4">
-          <Service
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            name="Setting Goals"
-            iconUrl="mountain.png"
-            description="On your wellness journey, we plan for milestones to pass and plan for the challenges you will face."
-          />
-          <v-btn color="rgba(0,0,0,0)" @click="showGoals">Read On</v-btn>
-        </v-col>
-      </v-row>
-        </div>
-        <div v-if="goals">
-          <p class="header">And what might THAT look like?</p>
-      <v-row cols="16">
-        <Goals data-aos="fade-left" data-aos-duration="800" />
-      </v-row>
-              <v-btn  color="rgba(0,0,0,0)" @click="revert" >I get it now</v-btn>
-        </div>
-        <div v-if="philosophy">
-          <p class="header"> How would this start?</p>
-                <v-row cols="16">
-        <Philosophy data-aos="fade-left" data-aos-duration="800" />
-      </v-row>
-              <v-btn  color="rgba(0,0,0,0)" @click="revert" >I get it now</v-btn>
-        </div>
+      <div v-if="servicesMenu">
+        <v-row cols="16">
+          <v-col cols="8" md="8" sm="16">
+            <p class="header">How do we do that?</p>
+          </v-col>
+        </v-row>
+        <v-row cols="16">
+          <v-col cols="16" sm="4">
+            <Service
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              name="Consultation"
+              iconUrl="bird.png"
+              description="It starts with getting to know you and gaining trust."
+            />
+            <v-btn color="rgba(0,0,0,0)" @click="showPhilosophy">Read On</v-btn>
+          </v-col>
+
+          <v-col cols="16" sm="4">
+            <Service
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              name="Medication"
+              iconUrl="mentalColor.png"
+              description="If needed, we consider what medications will best prepare you for what is ahead."
+            />
+            <v-btn color="rgba(0,0,0,0)" @click="showMedication">Read On</v-btn>
+          </v-col>
+          <v-col cols="16" sm="4">
+            <Service
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              name="Setting Goals"
+              iconUrl="mountain.png"
+              description="On your wellness journey, we plan for milestones to pass and plan for the challenges you will face."
+            />
+            <v-btn color="rgba(0,0,0,0)" @click="showGoals">Read On</v-btn>
+          </v-col>
+        </v-row>
+        <v-row cols="16">
+          <v-col cols="8" md="8" sm="16">
+            <p class="header">And all that works?</p>
+          </v-col>
+        </v-row>
+        <v-row cols="16">
+          <v-col cols="16" sm="4">
+            <TestimonialHouse />
+          </v-col>
+          <v-col md="6" sm="4">
+            <p style="font-size: 4.1em; font-family: 'Kirang Haerang';">
+              Ready to start?
+            </p>
+          </v-col>
+        </v-row>
+      </div>
+      <div v-if="goals">
+        <p class="header">And what might THAT look like?</p>
+        <v-row cols="16">
+          <Goals data-aos="fade-left" data-aos-duration="800" />
+        </v-row>
+        <v-btn color="rgba(0,0,0,0)" @click="$vuetify.goTo('#contact')"
+          >I get it now</v-btn
+        >
+      </div>
+      <div v-if="philosophy">
+        <p class="header">How would this start?</p>
+        <v-row cols="16">
+          <Philosophy data-aos="fade-left" data-aos-duration="800" />
+        </v-row>
+        <v-btn color="rgba(0,0,0,0)" @click="showMedication"
+          >I get it now</v-btn
+        >
+      </div>
+      <div v-if="medication">
+        <p class="header">What will medications do?</p>
+        <v-row cols="16">
+          <Medication data-aos="fade-left" data-aos-duration="800" />
+        </v-row>
+        <v-btn color="rgba(0,0,0,0)" @click="showGoals">I get it now</v-btn>
+      </div>
     </v-container>
   </div>
 </template>
@@ -62,17 +89,23 @@
 import Service from "@/components/Service";
 import Goals from "@/components/Goals";
 import Philosophy from "@/components/Philosophy.vue";
+import Medication from "@/components/Medication.vue";
+import TestimonialHouse from "@/components/TestimonialHouse.vue";
 export default {
   name: "Services",
   components: {
     Service,
     Goals,
-    Philosophy
+    TestimonialHouse,
+    Philosophy,
+    Medication
   },
   data() {
     return {
       goals: false,
       philosophy: false,
+      medication: false,
+      servicesMenu: true,
       services: [
         {
           name: "Physical Examination",
@@ -107,19 +140,30 @@ export default {
       ]
     };
   },
-  methods:{
-    showPhilosophy: function(){
-      this.services = false
-      this.philosophy = true
+  methods: {
+    showPhilosophy: function() {
+      this.servicesMenu = false;
+      this.goals = false;
+      this.medications = false;
+      this.philosophy = true;
     },
-    showGoals: function(){
-      this.services = false
-      this.goals = true
+    showGoals: function() {
+      this.servicesMenu = false;
+      this.philosophy = false;
+      this.medication = false;
+      this.goals = true;
     },
-    revert: function(){
-      this.goals = false,
-      this.philosophy = false,
-      this.services = true
+    showMedication: function() {
+      this.servicesMenu = false;
+      this.philosophy = false;
+      this.goals = false;
+      this.medication = true;
+    },
+    revert: function() {
+      (this.goals = false),
+        (this.philosophy = false),
+        (this.medication = true),
+        (this.servicesMenu = true);
     }
   }
 };
@@ -168,10 +212,9 @@ export default {
     background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     margin: 10px;
-        color: black;
+    color: black;
     padding: 10px;
     font-size: 1.3em;
   }
 }
-
 </style>

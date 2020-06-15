@@ -19,15 +19,23 @@
           </v-card>
         </v-col>
         <v-col cols="16" md="6" sm="8">
-          <div class="aboutParagraph" data-aos="fade-left" data-aos-duration="1000" >
+          <div
+            class="aboutParagraph"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <p>
               House of Clay is a welcoming, safe place to those who are
               struggling with substance abuse and have reached a point of
               decision to break the “chains” which have kept them from being who
-              they want to be.
+              they want to be.  
             </p>
           </div>
-            <div data-aos="fade-left" data-aos-duration="1000" class="aboutParagraph">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            class="aboutParagraph"
+          >
             <p>
               A lump of clay may have no obvious value, but its value resides in
               the fact that it can be molded, shaped and transformed into
@@ -40,17 +48,16 @@
             class="aboutParagraph"
           >
             <p>
-              We can help you decide how to find and transform into the person
-              you want to become;
+              With the guidance and expertise of Martha Corradine MD, House Of Clay works with people for all the potential they have, not just as medical diagnosis in need of rote treatment.  
             </p>
           </div>
-                    <div
+          <div
             data-aos="fade-left"
             data-aos-duration="1000"
             class="aboutParagraph"
           >
             <p>
-              We can help you decide how to find and transform into the person
+              At House of Clay, we can help you decide how to find and transform into the person
               you want to become;
             </p>
           </div>
@@ -100,9 +107,9 @@ export default {
   }
 }
 @media screen and (min-width: 416px) {
-  .aboutParagraph{
+  .aboutParagraph {
     font-size: 1.2em;
-    background-color:rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border: solid 2px white;
     padding: 15px;
     border-radius: 15px;
@@ -137,6 +144,5 @@ export default {
     font-size: 3em;
     text-align: center;
   }
-
 }
 </style>

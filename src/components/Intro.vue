@@ -26,13 +26,13 @@ export default {
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap");
-@media screen  and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .sunTarget {
     height: 15%;
     width: 15%;
     margin-left: 50px;
     margin-top: 200px;
-  position: absolute;
+    position: absolute;
   }
   .sunTarget p {
     font-family: "Kirang Haerang", cursive;
@@ -45,7 +45,7 @@ export default {
     width: 15%;
     margin-left: 30%;
     margin-top: 25%;
-position: absolute;
+    position: absolute;
   }
   .personTarget p {
     font-family: "Kirang Haerang", cursive;
@@ -102,7 +102,7 @@ position: absolute;
     font-family: "Kirang Haerang", cursive;
     font-size: 3em;
   }
-    .img {
+  .img {
     position: absolute;
   }
 }
@@ -131,7 +131,7 @@ position: absolute;
   .personTarget p {
     font-family: "Kirang Haerang", cursive;
     font-weight: 300;
-        font-size: 1.2em;
+    font-size: 1.2em;
   }
   .cloudTarget {
     height: 15%;
@@ -143,7 +143,7 @@ position: absolute;
   .cloudTarget p {
     font-family: "Kirang Haerang", cursive;
     font-weight: 300;
-        font-size: 1.2em;
+    font-size: 1.2em;
   }
 }
 </style>
