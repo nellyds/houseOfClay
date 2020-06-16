@@ -30,8 +30,6 @@
               </transition>
             </div>
             <img @click="showQuote" src="@/assets/talk.png" />
-            <p>{{ testimonialNumber }}</p>
-            <p>{{ increment }}</p>
             <v-btn text @click="testimonialOverlay = false">Done!</v-btn>
           </v-overlay>
         </transition>
