@@ -71,22 +71,36 @@ export default {
           answer: "This is a cash paying office. We do not accept insurance."
         },
         {
-          question: "Do you perform toxicology screens and Urinalysis?",
-          answer: "Yes."
-        },
-        { question: "Another question", answer: "Another answer" },
-        {
-          question: "Is this the format of the frequently asked questions?",
-          answer: "Yes, this is the format for presenting a Q and A"
+          question: "Do you accept payment plans?",
+          answer: "Yes we do"
         },
         {
           question: "Do you perform toxicology screens and Urinalysis?",
           answer: "Yes."
+          
         },
         {
-          question: "Do you perform toxicology screens and Urinalysis?",
+          question: "How is the urine toxicology paid for?",
+          answer: "How is the urine toxicology paid for?"
+        },
+        { question: "Can I be reimbursed my insurance after I have payed for my visit?", answer: "Some insurances allow you to do that." },
+        {
+          question: "Do you morning hours?",
+          answer: "Yes we start seeing patient at 8:00 am."
+        },
+        {
+          question: "Which days are you opened?",
+          answer:"Tuesdays, Thursdays, Saturdays with appointments."
+        },
+        {
+          question: "Do you prescribe Methadone?",
+          answer: "No we do not"
+        },
+        {
+          question: "Do you give Vivitrol",
           answer: "Yes."
         }
+
       ]
     };
   }

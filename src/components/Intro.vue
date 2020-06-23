@@ -4,7 +4,7 @@
       <p class="text" @click="$vuetify.goTo('#about')">About</p>
     </div>
     <div class="personTarget">
-      <p @click="$vuetify.goTo('#treatment')">Say Hi</p>
+      <p @click="goToContact">Say Hi</p>
     </div>
     <div class="cloudTarget">
       <p @click="$vuetify.goTo('#services')">What We DO</p>
@@ -18,8 +18,8 @@ export default {
   name: "Intro",
   components: {},
   methods: {
-    about: function() {
-      window.alert("reached");
+    goToContact: function(){
+      this.$router.push({'path': "/contact"})
     }
   }
 };

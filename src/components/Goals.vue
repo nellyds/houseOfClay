@@ -46,10 +46,7 @@
               to="0 597.5  40 505  80 597.5    175 480   260 597.5   335 525   370 597.5"
             />
           </polygon>
-          <p>
-            currentGoal :
-            <span data-aos="fade-up">{{ currentGoal }}</span>
-          </p>
+
           <rect
             class="flag"
             v-if="step2"
@@ -223,7 +220,13 @@
         </div>
         <transition name="exit">
           <v-form v-if="!step5" class="goalForm" v-on:submit.prevent>
-            <v-text-field label="What do you want to do?" v-model="goal" />
+          <v-combobox
+            v-model="goal"
+            :items="items"
+            label="What would you like to do?"
+          ></v-combobox>
+          <p>{{goal}}</p>
+            <!-- <v-text-field label="What do you want to do?" v-model="goal" /> -->
             <v-btn text class="flag" @click="anim">I can do this!</v-btn>
           </v-form>
         </transition>
@@ -252,7 +255,17 @@ export default {
       p4:
         "Whether you are struggling to maintain sobriety for the day or looking to get past residual pain from trauma, we understand your journey and your growth never truly end.",
       p5: "We will empower you to reach beyond dealing with today's problems.",
-      goals: []
+      goals: [],
+      items: [
+        "I need help",
+        "I want to stop chasing drugs",
+        "I do not want to go through withdrawals",
+        "I do not want to die",
+        "I want my life back",
+        "I want to my children back",
+        "I need a job",
+        "I want to go back to school"
+      ]
     };
   },
   methods: {
@@ -261,12 +274,12 @@ export default {
     },
     anim: function() {
       this.currentGoal = this.goal;
-      this.goal = "";
       this.$store.commit({
         type: "addGoal",
         goal: this.currentGoal
       });
       this.goals.push(this.currentGoal);
+      this.goal = ''
       if (this.step1 == true) {
         var el = document.getElementById("begin");
         el.beginElement();

@@ -13,8 +13,11 @@
             Send us a note: let us know how to get ahold of you to set up an
             appointment.
           </p>
+          <p v-if="done" data-aos="fade-left" data-aos-duration="800" style="font-family: 'Sunflower'; padding: 5px;">
+            Thanks for reaching out to us about starting your journey to wellness.  We will be in touch in less than 24 hours!
+          </p>
         </div>
-        <v-btn @click="home">Home</v-btn>
+        <v-btn color="rgba(0,0,0,0)" @click="home">Home</v-btn>
         <transition name="flip">
           <v-overlay v-if="overlay" color="black" :value="overlay" :z-index="5">
             <div class="contactOverlay">
@@ -77,6 +80,7 @@ export default {
       showContact: true,
       valid: true,
       letterFilled: false,
+      done: false,
       name: "",
       email: "",
       phone: "",
@@ -90,6 +94,11 @@ export default {
       message: {}
     };
   },
+  computed:{
+    goalList: function(){
+      return this.$store.state.goals
+    }
+  },
   methods: {
     submit: function() {
       this.$http
@@ -101,6 +110,7 @@ export default {
         })
         .then(result => {
           window.alert(result.data.message);
+          this.done = true;
         })
         .catch(() => {
           window.alert("Internal Service Error");
@@ -117,6 +127,9 @@ export default {
     },
     home: function() {
       this.$router.push({ path: "/" });
+    },
+    getGoals: function(){
+      console.log(this.$store.state.goals)
     }
   }
 };

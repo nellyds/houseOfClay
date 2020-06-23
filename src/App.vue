@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <Header />
     <vue-page-transition name="fade-in-right">
       <router-view />
     </vue-page-transition>
@@ -7,10 +8,11 @@
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
 export default {
   name: "App",
 
-  components: {},
+  components: {Header },
 
   data: () => ({
     //
@@ -20,6 +22,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap");
+
 body {
   background-color: #ff8229;
   size: 100vw;
