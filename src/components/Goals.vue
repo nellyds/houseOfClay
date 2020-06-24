@@ -184,22 +184,6 @@
           />
         </svg>
 
-        <v-chip
-          class="ma-2"
-          color="rgba(202, 194, 72, 0.2)"
-          text-color="white"
-          padding="20"
-          style="border: solid 2px white;"
-          width="40"
-          v-for="(goal, i) in goals"
-          v-bind:key="i"
-        >
-          <v-avatar left>
-            <v-icon>mdi-checkbox-marked-circle</v-icon>
-          </v-avatar>
-          {{ goal }}
-        </v-chip>
-
         <div class="goalParagraph">
           <transition name="slide">
             <p v-if="step1">{{ p1 }}</p>
@@ -210,26 +194,49 @@
           <transition name="slide">
             <p v-if="step4">{{ p3 }}</p>
           </transition>
+          <v-btn text class="flag" @click="anim">Go on...</v-btn>
           <transition name="slide">
             <div v-if="step5">
               <p>{{ p5 }}</p>
-              <p>Ready to start?</p>
-              <v-btn @click="contact"> Let's talk!</v-btn>
+              <p>
+                Let's try it! Think of what you want to accomplish along your
+                journey!
+              </p>
+              <v-row>
+                <v-col>
+                  <div v-for="(item, i) in items" v-bind:key="i">
+                    <v-checkbox
+                      v-model="goals"
+                      v-bind:label="item"
+                      v-bind:value="item"
+                    />
+                  </div>
+                  <v-text-field v-model="userGoal" label="write your own" />
+                  <v-btn color="rgba(0,0,0,0)" @click="addGoal">Add</v-btn>
+                </v-col>
+                <v-col>
+                  <v-chip
+                    class="ma-2"
+                    color="rgba(0, 00, 0, 0.8)"
+                    text-color="white"
+                    padding="20"
+                    style="border: solid 2px white;"
+                    width="40"
+                    v-for="(goal, i) in goals"
+                    v-bind:key="i"
+                  >
+                    <v-avatar left>
+                      <v-icon>mdi-checkbox-marked-circle</v-icon>
+                    </v-avatar>
+                    {{ goal }}
+                  </v-chip>
+                </v-col>
+              </v-row>
+              <v-btn @click="contact"> I am ready to start!</v-btn>
             </div>
           </transition>
         </div>
-        <transition name="exit">
-          <v-form v-if="!step5" class="goalForm" v-on:submit.prevent>
-          <v-combobox
-            v-model="goal"
-            :items="items"
-            label="What would you like to do?"
-          ></v-combobox>
-          <p>{{goal}}</p>
-            <!-- <v-text-field label="What do you want to do?" v-model="goal" /> -->
-            <v-btn text class="flag" @click="anim">I can do this!</v-btn>
-          </v-form>
-        </transition>
+        <transition name="exit"> </transition>
       </v-col>
     </v-row>
   </div>
@@ -239,8 +246,7 @@ export default {
   components: {},
   data() {
     return {
-      currentGoal: "",
-      goal: "",
+      userGoal: "",
       step1: true,
       step2: false,
       step3: false,
@@ -269,17 +275,14 @@ export default {
     };
   },
   methods: {
+    addGoal: function() {
+      this.goals.push(this.userGoal);
+      this.userGoal = "";
+    },
     contact: function() {
       this.$router.push({ path: "/contact" });
     },
     anim: function() {
-      this.currentGoal = this.goal;
-      this.$store.commit({
-        type: "addGoal",
-        goal: this.currentGoal
-      });
-      this.goals.push(this.currentGoal);
-      this.goal = ''
       if (this.step1 == true) {
         var el = document.getElementById("begin");
         el.beginElement();

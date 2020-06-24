@@ -46,7 +46,8 @@ export default {
           imageUrl: "house3.png"
         },
         {
-          content: "As your journey to wellness progresses, we will work with you as you reassess your life, whether it be your medication regimen or your goals in recovery.  Work does not finish, and you connection does not end!",
+          content:
+            "As your journey to wellness progresses, we will work with you as you reassess your life, whether it be your medication regimen or your goals in recovery.  Work does not finish, and you connection does not end!",
           imageUrl: "house4.png"
         }
       ]

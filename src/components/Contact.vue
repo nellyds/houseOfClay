@@ -13,8 +13,14 @@
             Send us a note: let us know how to get ahold of you to set up an
             appointment.
           </p>
-          <p v-if="done" data-aos="fade-left" data-aos-duration="800" style="font-family: 'Sunflower'; padding: 5px;">
-            Thanks for reaching out to us about starting your journey to wellness.  We will be in touch in less than 24 hours!
+          <p
+            v-if="done"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            style="font-family: 'Sunflower'; padding: 5px;"
+          >
+            Thanks for reaching out to us about starting your journey to
+            wellness. We will be in touch in less than 24 hours!
           </p>
         </div>
         <v-btn color="rgba(0,0,0,0)" @click="home">Home</v-btn>
@@ -94,9 +100,9 @@ export default {
       message: {}
     };
   },
-  computed:{
-    goalList: function(){
-      return this.$store.state.goals
+  computed: {
+    goalList: function() {
+      return this.$store.state.goals;
     }
   },
   methods: {
@@ -106,7 +112,8 @@ export default {
           name: this.name,
           phone: this.phone,
           email: this.email,
-          formMessage: this.formMessage
+          formMessage: this.formMessage,
+          goals: this.goalList
         })
         .then(result => {
           window.alert(result.data.message);
@@ -128,8 +135,8 @@ export default {
     home: function() {
       this.$router.push({ path: "/" });
     },
-    getGoals: function(){
-      console.log(this.$store.state.goals)
+    getGoals: function() {
+      console.log(this.$store.state.goals);
     }
   }
 };

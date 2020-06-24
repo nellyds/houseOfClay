@@ -18,8 +18,8 @@ export default {
   name: "Intro",
   components: {},
   methods: {
-    goToContact: function(){
-      this.$router.push({'path': "/contact"})
+    goToContact: function() {
+      this.$router.push({ path: "/contact" });
     }
   }
 };

@@ -5,15 +5,13 @@
       <v-col>
         <div class="card">
           <p class="yes">
-           <span class="s">Y</span>
-              <span class="s">e</span>
-              <span class="s">s</span>
-              <span class="one">!</span>
+            <span class="s">Y</span>
+            <span class="s">e</span>
+            <span class="s">s</span>
+            <span class="one">!</span>
           </p>
           <p>
-
-              
-              It does! Rather than explain how, listen to what past guests have
+            It does! Rather than explain how, listen to what past guests have
             said.
           </p>
           <img
@@ -87,20 +85,20 @@ export default {
 };
 </script>
 <style scoped>
-.yes{
-margin-bottom: 0px;
+.yes {
+  margin-bottom: 0px;
 }
-.y{
-  font-size:1.4em;
+.y {
+  font-size: 1.4em;
 }
-.e{
-  font-size:1.8em;
+.e {
+  font-size: 1.8em;
 }
-.s{
-  font-size:2.3em;
+.s {
+  font-size: 2.3em;
 }
-.one{
-  font-size:2.7em;
+.one {
+  font-size: 2.7em;
 }
 .quoteHolder {
   min-height: 200px;

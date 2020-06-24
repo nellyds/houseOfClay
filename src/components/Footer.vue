@@ -2,15 +2,19 @@
   <div class="footer">
     <v-row cols="6">
       <v-col md="4" />
-      <v-col md="4" >
-    <div class="card">
-      <img @click="goFaq" class="serviceIcon" src="@/assets/faq.png" />
-      <p> Any other questions?  Click here!  If not.... </p>
-    </div>
+      <v-col md="4">
         <div class="card">
-      <img @click="goContact" class="serviceIcon" src="@/assets/appointment.png" />
-      <p> Let's set up a time to talk!  </p>
-    </div>
+          <img @click="goFaq" class="serviceIcon" src="@/assets/faq.png" />
+          <p>Any other questions? Click here! If not....</p>
+        </div>
+        <div class="card">
+          <img
+            @click="goContact"
+            class="serviceIcon"
+            src="@/assets/appointment.png"
+          />
+          <p>Let's set up a time to talk!</p>
+        </div>
       </v-col>
     </v-row>
     <v-footer padless color="rgba(0,0,0,0)" class="footerNote">
@@ -22,20 +26,37 @@
         width="100%"
         class="text-center"
       >
-      <v-row cols="8" >
-      <v-col md="4">
-        <p style="color: white;"> Sole Practioner: Dr. Martha Monica Corradine</p>
-        <p>
-        <a style="color: white;" href="http://maps.google.com/maps?q=5900+North+Main+Street,+Dayton,+OH+45415">  <i style="color:white; padding:4px;" class="fas fa-map-marked-alt"></i>
-5900 North Main Street</a></p>
-       <p><a style="color: white;" href="tel:937-229-9800"> <i style="color:white; padding: 4px;" class="fas fa-phone-alt"></i>  (937)-229-9800</a></p>
-      </v-col>
-            <v-col v-if="$vuetify.breakpoint.smAndUp"  md="4">
-                <p style="color: white;">
-
-                </p>
-      </v-col>
-      </v-row>
+        <v-row cols="8">
+          <v-col md="4">
+            <p style="color: white;">
+              Sole Practioner: Dr. Martha Monica Corradine
+            </p>
+            <p>
+              <a
+                style="color: white;"
+                href="http://maps.google.com/maps?q=5900+North+Main+Street,+Dayton,+OH+45415"
+              >
+                <i
+                  style="color:white; padding:4px;"
+                  class="fas fa-map-marked-alt"
+                ></i>
+                5900 North Main Street</a
+              >
+            </p>
+            <p>
+              <a style="color: white;" href="tel:937-229-9800">
+                <i
+                  style="color:white; padding: 4px;"
+                  class="fas fa-phone-alt"
+                ></i>
+                (937)-229-9800</a
+              >
+            </p>
+          </v-col>
+          <v-col v-if="$vuetify.breakpoint.smAndUp" md="4">
+            <p style="color: white;"></p>
+          </v-col>
+        </v-row>
 
         <v-divider></v-divider>
         <v-card-text class="white--text">
@@ -50,11 +71,9 @@
   </div>
 </template>
 <script>
-
 export default {
   name: "Footer",
-  components: {
-  },
+  components: {},
   data() {
     return {
       testimonialOverlay: false,
@@ -62,13 +81,12 @@ export default {
     };
   },
   methods: {
-    goFaq: function(){
-      this.$router.push({'path': "/about"})
+    goFaq: function() {
+      this.$router.push({ path: "/about" });
     },
-    goContact: function(){
-      this.$router.push({'path': "/contact"})
+    goContact: function() {
+      this.$router.push({ path: "/contact" });
     }
-
   }
 };
 </script>
@@ -105,12 +123,11 @@ export default {
   margin: 15px;
   text-align: center;
 }
-.card p{
+.card p {
   font-weight: 1.2;
   margin: 3px;
   font-size: 1.2em;
-  font-family: 'Sunflower';
-  
+  font-family: "Sunflower";
 }
 a {
   color: white;

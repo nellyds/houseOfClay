@@ -28,7 +28,7 @@
               House of Clay is a welcoming, safe place to those who are
               struggling with substance abuse and have reached a point of
               decision to break the “chains” which have kept them from being who
-              they want to be.  
+              they want to be.
             </p>
           </div>
           <div
@@ -48,7 +48,9 @@
             class="aboutParagraph"
           >
             <p>
-              With the guidance and expertise of Martha Corradine MD, House Of Clay works with people for all the potential they have, not just as medical diagnosis in need of rote treatment.  
+              With the guidance and expertise of Martha Corradine MD, House Of
+              Clay works with people for all the potential they have, not just
+              as medical diagnosis in need of rote treatment.
             </p>
           </div>
           <div
@@ -57,8 +59,8 @@
             class="aboutParagraph"
           >
             <p>
-              At House of Clay, we can help you decide how to find and transform into the person
-              you want to become;
+              At House of Clay, we can help you decide how to find and transform
+              into the person you want to become;
             </p>
           </div>
         </v-col>

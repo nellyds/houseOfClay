@@ -77,20 +77,23 @@ export default {
         {
           question: "Do you perform toxicology screens and Urinalysis?",
           answer: "Yes."
-          
         },
         {
           question: "How is the urine toxicology paid for?",
           answer: "How is the urine toxicology paid for?"
         },
-        { question: "Can I be reimbursed my insurance after I have payed for my visit?", answer: "Some insurances allow you to do that." },
+        {
+          question:
+            "Can I be reimbursed my insurance after I have payed for my visit?",
+          answer: "Some insurances allow you to do that."
+        },
         {
           question: "Do you morning hours?",
           answer: "Yes we start seeing patient at 8:00 am."
         },
         {
           question: "Which days are you opened?",
-          answer:"Tuesdays, Thursdays, Saturdays with appointments."
+          answer: "Tuesdays, Thursdays, Saturdays with appointments."
         },
         {
           question: "Do you prescribe Methadone?",
@@ -100,7 +103,6 @@ export default {
           question: "Do you give Vivitrol",
           answer: "Yes."
         }
-
       ]
     };
   }
