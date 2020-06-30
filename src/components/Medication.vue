@@ -25,7 +25,7 @@ export default {
       p4:
         "Under the care and medical expertise provided at House of Clay, you will, devise a safe, effective MAT plan.",
       p5:
-        "Vivitrol, another medication we often prescribe, is in an opioid antagonist or BLOCKIN MEDICATION that does not lead to physical dependence. It is a prescription injectable. It can help with opioid, alcohol and other use disorders."
+        "Vivitrol, another medication we often prescribe, is in an opioid antagonist or BLOCKING MEDICATION that does not lead to physical dependence. It is a prescription injectable. It can help with opioid, alcohol and other use disorders."
     };
   }
 };

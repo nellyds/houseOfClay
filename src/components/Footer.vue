@@ -29,7 +29,7 @@
         <v-row cols="8">
           <v-col md="4">
             <p style="color: white;">
-              Sole Practioner: Dr. Martha Monica Corradine
+              Sole Practioner: Monica Corradine,  MD
             </p>
             <p>
               <a
