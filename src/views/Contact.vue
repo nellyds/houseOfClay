@@ -1,13 +1,16 @@
 <template>
   <div class="contactPage">
     <Contact />
+    <TestimonialSubmit />
   </div>
 </template>
 <script>
 import Contact from "@/components/Contact.vue";
+import TestimonialSubmit from "@/components/TestimonialSubmit.vue";
 export default {
   components: {
-    Contact
+    Contact,
+    TestimonialSubmit
   }
 };
 </script>
