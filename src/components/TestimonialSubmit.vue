@@ -49,7 +49,7 @@ If you have been treated at House Of Clay, we want to hear from you.  Tell us yo
                 ></v-text-field>
                 <v-text-field
                   v-model="testimonial"
-                  hint="What do you want to get from coming to House of Clay?"
+                  hint="What did you get from coming to House of Clay?"
                   label="Your Experience"
                 ></v-text-field>
                 <v-btn @click="submit">Submit</v-btn>
