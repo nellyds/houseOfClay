@@ -49,9 +49,9 @@ export default {
   data() {
     return {
       statements: [
-        "Dr. Cordinni took over the practice from another doctor. Her transition was smooth.  I immediately felt at ease. Dr. Cordinni treats my whole person - physical and mental. As well as being an addiction specialist she is a Dr. of Internal Medicine. Her knowledge of the systems of the body is so helpful in treating my addiction. I would recommend her in a heartbeat.",
-        "Throughout the years I’ve been blessed to maintain abstinence from drugs and alcohol. While on the road of recovery I’ve struggled to find balance in certain areas of life.  At House of Clay I have received strength, clarity, and hope for learning to live a clean and healthy lifestyle.   Dr. Corradine has presented me with many treatment options that have helped me find a combination of therapy’s that best suit my needs. I have been very impressed with the amazing level of care when helping me reach my goals. I’m forever grateful to House of Clay for showing me that it’s possible to make positive changes in life no matter how impossible it may seem. Thank You For My Life.",
-        "A third quote to test out this feature"
+        // "Dr. Cordinni took over the practice from another doctor. Her transition was smooth.  I immediately felt at ease. Dr. Cordinni treats my whole person - physical and mental. As well as being an addiction specialist she is a Dr. of Internal Medicine. Her knowledge of the systems of the body is so helpful in treating my addiction. I would recommend her in a heartbeat.",
+        // "Throughout the years I’ve been blessed to maintain abstinence from drugs and alcohol. While on the road of recovery I’ve struggled to find balance in certain areas of life.  At House of Clay I have received strength, clarity, and hope for learning to live a clean and healthy lifestyle.   Dr. Corradine has presented me with many treatment options that have helped me find a combination of therapy’s that best suit my needs. I have been very impressed with the amazing level of care when helping me reach my goals. I’m forever grateful to House of Clay for showing me that it’s possible to make positive changes in life no matter how impossible it may seem. Thank You For My Life.",
+        // "A third quote to test out this feature"
       ],
       show: false,
       testimonialNumber: 0,
@@ -75,13 +75,21 @@ export default {
         }
         this.testimonialNumber += this.increment;
       }
-    }
+    },
   },
   computed: {
     quote: function() {
-      return this.statements[this.testimonialNumber];
+      console.log(this.statements)
+      return this.statements[this.testimonialNumber].testimonial;
     }
-  }
+  },    mounted(){
+      this.$http.post('https://nelsondsilva.pythonanywhere.com/hoc/testimonial/get')
+      .then(result =>{
+        this.statements = result.data.result
+      }).catch(error =>{
+        console.log(error.message)
+      })
+    }
 };
 </script>
 <style scoped>
