@@ -12,6 +12,7 @@
           <p style="font-family: 'Sunflower'; padding: 5px;">
 If you have been treated at House Of Clay, we want to hear from you.  Tell us your story.
           </p>
+          <p v-if="waiting"> Sending your message, please wait....</p>
           <p
             v-if="done"
             data-aos="fade-left"
@@ -71,6 +72,7 @@ export default {
       infoComplete: false,
       showContact: true,
       done: false,
+      waiting: false,
       name: "",
     testimonial: ""
     };
@@ -82,17 +84,19 @@ export default {
   },
   methods: {
     submit: function() {
+      this.waiting = true;
       this.$http
         .post("https://nelsondsilva.pythonanywhere.com/hoc/testimonial/post", {
           name: this.name,
 testimonial: this.testimonial
         })
-        .then(result => {
-          window.alert(result.data.message);
+        .then(() => {
+          this.waiting = false;
           this.done = true;
         })
         .catch(() => {
           window.alert("Internal Service Error");
+          this.waiting = false;
         });
       this.overlay = false;
     },
